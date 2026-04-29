@@ -23,6 +23,11 @@ function migrate() {
       type TEXT NOT NULL CHECK(type IN ('Asset', 'Liability', 'Equity', 'Income', 'Expense')),
       normal_balance TEXT NOT NULL CHECK(normal_balance IN ('Debit', 'Credit')),
       parent_group_id INTEGER,
+      gstin TEXT,
+      state_code TEXT,
+      registration_type TEXT CHECK(registration_type IN ('regular', 'composition', 'unregistered', 'overseas', NULL)),
+      default_supply_type TEXT CHECK(default_supply_type IN ('taxable', 'exempt', 'nil_rated', 'non_gst', NULL)),
+      rcm_flag BOOLEAN DEFAULT 0,
       FOREIGN KEY(parent_group_id) REFERENCES ledger_groups(id)
     );
 
