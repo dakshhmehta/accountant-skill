@@ -30,7 +30,9 @@ function main() {
             payload.voucher.tax_rate, 
             partyLedger?.state_code || companyState, 
             companyState, 
-            isPurchase
+            isPurchase,
+            false,
+            partyLedger?.gstin
         );
         
         payload.lines = [...payload.lines, ...taxLines];

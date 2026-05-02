@@ -68,6 +68,21 @@ Welcome to the Accountant Agent Skill repository! This document serves as the ma
 
 ---
 
+## 📋 GST Rules
+
+### GSTIN-Based Tax Jurisdiction Rule
+
+When creating an invoice (Sales Entry / SE), the system determines whether to apply **CGST+SGST** (intrastate) or **IGST** (interstate) based on the following priority:
+
+1. **If the party ledger has NO valid GSTIN** → **Always use CGST/SGST** (intrastate)
+2. **If the party ledger HAS a valid GSTIN** → Check state codes:
+   - Same state as company → CGST/SGST
+   - Different state → IGST
+
+This rule is enforced in `tool/lib/gst-engine.js` via the `determineGST()` function. The `partyGSTIN` parameter is checked first before evaluating interstate status.
+
+**Why:** Without a valid GSTIN, the party cannot claim interstate GST benefits, so the transaction defaults to intrastate treatment.
+
 ## 🛠 Installation & Setup
 
 The actual execution logic resides in the `tool/` directory, powered by Node.js and `better-sqlite3`.

@@ -1,0 +1,19 @@
+{
+  "voucher": {
+    "type": "SE",
+    "date": "2026-04-07",
+    "amount": 2430,
+    "narration": "Razorpay settlement - Domain hosting sale net of PG charges (IGST, Karnataka supplier)",
+    "source_doc_type": "Razorpay Settlement",
+    "source_doc_no": "RZP-001",
+    "status": "DRAFT",
+    "request_id": "rzp-settlement-001"
+  },
+  "lines": [
+    { "ledger_id": 2, "debit": 2372.66, "credit": 0 },
+    { "ledger_id": 16, "debit": 48.60, "credit": 0 },
+    { "ledger_id": 20, "debit": 8.74, "credit": 0 },
+    { "ledger_id": 5, "debit": 0, "credit": 2059.32 },
+    { "ledger_id": 19, "debit": 0, "credit": 370.68 }
+  ]
+}

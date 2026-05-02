@@ -1,0 +1,17 @@
+{
+  "voucher": {
+    "type": "SE",
+    "date": "2026-04-07",
+    "amount": 2430,
+    "narration": "BJRR Subscription - Invoice #BJRR-001",
+    "source_doc_type": "Tax Invoice",
+    "source_doc_no": "BJRR-001",
+    "status": "CONFIRMED",
+    "request_id": "bjrr-inv-001"
+  },
+  "lines": [
+    { "ledger_id": 21, "debit": 2430, "credit": 0 },
+    { "ledger_id": 22, "debit": 0, "credit": 2059.32 },
+    { "ledger_id": 19, "debit": 0, "credit": 370.68 }
+  ]
+}

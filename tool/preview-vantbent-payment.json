@@ -1,0 +1,16 @@
+{
+  "voucher": {
+    "type": "BR",
+    "date": "2026-04-09",
+    "amount": 10106,
+    "narration": "Payment received from Vant Bent against INV-002",
+    "source_doc_type": "Bank Receipt",
+    "source_doc_no": "BR-VB-001",
+    "status": "CONFIRMED",
+    "request_id": "br-vantbent-001"
+  },
+  "lines": [
+    { "ledger_id": 2, "debit": 10106, "credit": 0 },
+    { "ledger_id": 12, "debit": 0, "credit": 10106 }
+  ]
+}

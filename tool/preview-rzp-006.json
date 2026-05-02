@@ -1,0 +1,34 @@
+{
+  "voucher": {
+    "type": "BR",
+    "date": "2026-04-16",
+    "amount": 2430,
+    "narration": "Razorpay settlement for BJRR-006 - net after PG charges",
+    "source_doc_type": "Razorpay Settlement",
+    "source_doc_no": "RZP-006",
+    "status": "CONFIRMED",
+    "request_id": "bjrr-payment-006"
+  },
+  "lines": [
+    {
+      "ledger_id": 2,
+      "debit": 2372.66,
+      "credit": 0
+    },
+    {
+      "ledger_id": 16,
+      "debit": 48.6,
+      "credit": 0
+    },
+    {
+      "ledger_id": 20,
+      "debit": 8.74,
+      "credit": 0
+    },
+    {
+      "ledger_id": 27,
+      "debit": 0,
+      "credit": 2430
+    }
+  ]
+}

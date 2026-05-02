@@ -1,0 +1,19 @@
+{
+  "voucher": {
+    "type": "SE",
+    "date": "2026-04-30",
+    "amount": 10106,
+    "narration": "Invoice #2 - van-bent.com domain, hosting & email support - Vant Bent",
+    "source_doc_type": "Tax Invoice",
+    "source_doc_no": "INV-002",
+    "status": "CONFIRMED",
+    "request_id": "inv-vantbent-002"
+  },
+  "lines": [
+    { "ledger_id": 12, "debit": 10106, "credit": 0 },
+    { "ledger_id": 5, "debit": 0, "credit": 7380.28 },
+    { "ledger_id": 15, "debit": 0, "credit": 1184.13 },
+    { "ledger_id": 13, "debit": 0, "credit": 770.79 },
+    { "ledger_id": 14, "debit": 0, "credit": 770.80 }
+  ]
+}
