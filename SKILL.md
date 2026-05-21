@@ -60,7 +60,13 @@ Welcome to the Accountant Agent Skill repository! This document serves as the ma
 - **What it contains:** Document definitions and the "Document First, Entry Second" rule.
 - **Why it's important:** Ensures that the agent does not fabricate entries without underlying business proof.
 
-### 10. `transaction_language.md`
+### 10. `tally_xml_examples.md`
+- **What it is for:** Reference templates for Tally Primitive XML.
+- **How to use it:** Use when importing GST-compliant vouchers into Tally via XML Import. Contains field-by-field templates for Sale Bills (GST Sales Invoice) with CGST/SGST split, party/income ledgers, and SAC/HSN codes.
+- **What it contains:** Full XML template for intrastate GST sales invoices, field guide, calculation examples, and GST rate configuration rules.
+- **Why it's important:** Eliminates guesswork when generating Tally XML — ensures GSTIN, tax rates, ledger amounts, and SAC codes are correctly placed.
+
+### 11. `transaction_language.md`
 - **What it is for:** NLP keyword mappings.
 - **How to use it:** Use as a dictionary to parse user intent and colloquials into formal accounting commands.
 - **What it contains:** Extensive lists of keywords, phrases, and Indian/Global colloquialisms mapped to specific voucher types.
