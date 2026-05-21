@@ -1,0 +1,16 @@
+{
+  "voucher": {
+    "type": "BP",
+    "date": "2026-05-20",
+    "amount": 3742,
+    "narration": "April 2026 GST - Remaining payment after input setoff (incl late fee)",
+    "tax_rate": null,
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 13, "debit": 294.62, "credit": 0 },
+    { "ledger_id": 14, "debit": 3392.24, "credit": 0 },
+    { "ledger_id": 55, "debit": 55.14, "credit": 0 },
+    { "ledger_id": 2, "debit": 0, "credit": 3742.00 }
+  ]
+}

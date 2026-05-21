@@ -1,0 +1,14 @@
+{
+  "voucher": {
+    "type": "BR",
+    "date": "2026-05-21",
+    "amount": 41300,
+    "narration": "Receipt against SI-00021/2026 - Docura.in - Paid to DCB Bank",
+    "tax_rate": null,
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 2, "debit": 41300, "credit": 0 },
+    { "ledger_id": 58, "debit": 0, "credit": 41300 }
+  ]
+}

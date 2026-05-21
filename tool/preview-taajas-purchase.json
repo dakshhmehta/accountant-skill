@@ -1,0 +1,15 @@
+{
+  "voucher": {
+    "type": "BP",
+    "date": "2026-05-21",
+    "amount": 1261.42,
+    "narration": "Registration of taajas.com for 1 year - Billing ID: 19611360 / Txn: 300641501",
+    "tax_rate": null,
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 10, "debit": 1069, "credit": 0 },
+    { "ledger_id": 20, "debit": 192.42, "credit": 0 },
+    { "ledger_id": 46, "debit": 0, "credit": 1261.42 }
+  ]
+}

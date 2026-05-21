@@ -1,0 +1,14 @@
+{
+  "voucher": {
+    "type": "JE",
+    "date": "2026-05-21",
+    "amount": 5.57,
+    "narration": "ResellerClub balance adjustment - booked as PG charges to match actual wallet balance",
+    "tax_rate": null,
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 16, "debit": 5.57, "credit": 0 },
+    { "ledger_id": 46, "debit": 0, "credit": 5.57 }
+  ]
+}

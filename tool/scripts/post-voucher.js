@@ -28,6 +28,9 @@ function main() {
         process.exit(1);
     }
 
+    // Force status to POSTED for trial balance inclusion
+    payload.voucher.status = 'POSTED';
+    
     try {
         const id = engine.postVoucher(payload.voucher, payload.lines);
         console.log(`Successfully posted voucher ID: ${id}`);

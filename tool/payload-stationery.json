@@ -1,0 +1,15 @@
+{
+  "voucher": {
+    "type": "JE",
+    "date": "2026-05-08",
+    "amount": 435,
+    "narration": "Stationery expense paid by Daksh on behalf of Romin Interactive",
+    "source_doc_type": "Expense Receipt",
+    "source_doc_no": "EXP-0001",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 45, "debit": 435, "credit": 0 },
+    { "ledger_id": 44, "debit": 0, "credit": 435 }
+  ]
+}

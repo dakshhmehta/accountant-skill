@@ -1,0 +1,14 @@
+{
+  "voucher": {
+    "type": "JE",
+    "date": "2026-05-13",
+    "amount": 5.57,
+    "narration": "PG charges on Romin Joshi deposit of Rs 5,000 to ResellerClub wallet",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 16, "debit": 4.72, "credit": 0 },
+    { "ledger_id": 20, "debit": 0.85, "credit": 0 },
+    { "ledger_id": 46, "debit": 0, "credit": 5.57 }
+  ]
+}

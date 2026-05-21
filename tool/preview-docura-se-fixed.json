@@ -1,0 +1,16 @@
+{
+  "voucher": {
+    "type": "SE",
+    "date": "2026-05-21",
+    "amount": 47600,
+    "narration": "Sales Invoice SI-00021/2026 - Docura.in Shopify website changes",
+    "tax_rate": 18,
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 58, "debit": 47600, "credit": 0 },
+    { "ledger_id": 8, "debit": 0, "credit": 35000 },
+    { "ledger_id": 13, "debit": 0, "credit": 3150 },
+    { "ledger_id": 14, "debit": 0, "credit": 3150 }
+  ]
+}

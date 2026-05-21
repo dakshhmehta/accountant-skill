@@ -1,0 +1,15 @@
+{
+  "voucher": {
+    "type": "JE",
+    "date": "2026-05-08",
+    "amount": 153.59,
+    "narration": "TDS @ 2% on Interakt Commission Income from JIO HAPTIK (Invoice INV-JIO-001)",
+    "source_doc_type": "TDS Certificate",
+    "source_doc_no": "TDS-JIO-001",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 43, "debit": 153.59, "credit": 0 },
+    { "ledger_id": 38, "debit": 0, "credit": 153.59 }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "voucher": {
+    "type": "BR",
+    "date": "2026-05-12",
+    "amount": 12681,
+    "narration": "Receipt against SI-00018/2026 - Domain and Hosting",
+    "tax_rate": null,
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 2, "debit": 12681, "credit": 0 },
+    { "ledger_id": 56, "debit": 0, "credit": 12681 }
+  ]
+}
