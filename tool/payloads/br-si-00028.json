@@ -1,0 +1,23 @@
+{
+  "voucher": {
+    "type": "BR",
+    "date": "2026-06-05",
+    "amount": 8260,
+    "narration": "Payment received from Shubh Nivesh (Niranjanprasad) against SI-00028/2026 — credited to DCB Bank",
+    "source_doc_type": "Bank Receipt",
+    "source_doc_no": "BR-SI-00028",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    {
+      "ledger_id": 2,
+      "debit": 8260,
+      "credit": 0
+    },
+    {
+      "ledger_id": 66,
+      "debit": 0,
+      "credit": 8260
+    }
+  ]
+}

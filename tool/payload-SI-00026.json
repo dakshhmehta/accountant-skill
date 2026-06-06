@@ -1,0 +1,33 @@
+{
+  "voucher": {
+    "type": "SE",
+    "date": "2026-06-01",
+    "amount": 1460,
+    "narration": "Tax invoice SI-00026/2026 - krimali.com domain renewal for Ms. Krimali Mehta",
+    "source_doc_type": "Tax Invoice",
+    "source_doc_no": "SI-00026/2026",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    {
+      "ledger_id": 64,
+      "debit": 1460,
+      "credit": 0
+    },
+    {
+      "ledger_id": 5,
+      "debit": 0,
+      "credit": 1237
+    },
+    {
+      "ledger_id": 13,
+      "debit": 0,
+      "credit": 111
+    },
+    {
+      "ledger_id": 14,
+      "debit": 0,
+      "credit": 112
+    }
+  ]
+}

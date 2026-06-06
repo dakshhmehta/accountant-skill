@@ -1,0 +1,39 @@
+{
+  "voucher": {
+    "type": "SE",
+    "date": "2026-05-26",
+    "amount": 12796.61,
+    "tax_rate": 18,
+    "narration": "Tax invoice SI-00022/2026 (proforma DH-00014/2026) - Domain \u20b91,760 + Hosting \u20b99,210 + Website Support/AMC \u20b94,130 for Excelsior Model School, Adipur",
+    "source_doc_type": "Tax Invoice",
+    "source_doc_no": "SI-00022/2026",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    {
+      "ledger_id": 62,
+      "debit": 15100.0,
+      "credit": 0
+    },
+    {
+      "ledger_id": 5,
+      "debit": 0,
+      "credit": 9296.61
+    },
+    {
+      "ledger_id": 8,
+      "debit": 0,
+      "credit": 3500.0
+    },
+    {
+      "ledger_id": 13,
+      "debit": 0,
+      "credit": 1151.69
+    },
+    {
+      "ledger_id": 14,
+      "debit": 0,
+      "credit": 1151.7
+    }
+  ]
+}

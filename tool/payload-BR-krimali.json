@@ -1,0 +1,23 @@
+{
+  "voucher": {
+    "type": "BR",
+    "date": "2026-06-01",
+    "amount": 7340,
+    "narration": "Payment received from Ms. Krimali Mehta for SI-00026/2026 (₹1,460) + SI-00027/2026 (₹5,880)",
+    "source_doc_type": "Bank Receipt",
+    "source_doc_no": "BR-SI-00026-27",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    {
+      "ledger_id": 2,
+      "debit": 7340,
+      "credit": 0
+    },
+    {
+      "ledger_id": 64,
+      "debit": 0,
+      "credit": 7340
+    }
+  ]
+}

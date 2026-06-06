@@ -1,0 +1,34 @@
+{
+  "voucher": {
+    "type": "SE",
+    "date": "2026-06-05",
+    "amount": 7000,
+    "tax_rate": 18,
+    "narration": "Being Insurance CRM services — Period Jan to Dec 2026 — Invoice SI-00028/2026 (converted from proforma SR-00032/2025)",
+    "source_doc_type": "Sales Invoice",
+    "source_doc_no": "SI-00028/2026",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    {
+      "ledger_id": 66,
+      "debit": 8260,
+      "credit": 0
+    },
+    {
+      "ledger_id": 7,
+      "debit": 0,
+      "credit": 7000
+    },
+    {
+      "ledger_id": 13,
+      "debit": 0,
+      "credit": 630
+    },
+    {
+      "ledger_id": 14,
+      "debit": 0,
+      "credit": 630
+    }
+  ]
+}

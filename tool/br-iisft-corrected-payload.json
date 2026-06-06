@@ -1,0 +1,23 @@
+{
+  "voucher": {
+    "type": "BR",
+    "date": "2026-06-01",
+    "amount": 41600,
+    "narration": "Payment received from IISFT Skills Pvt Ltd against invoices SI-00023/2026 (₹15,452), SI-00024/2026 (₹4,130), SI-00025/2026 (₹22,018) — total ₹41,600 (corrected from ₹41,000)",
+    "source_doc_type": "Bank transfer",
+    "source_doc_no": "BR-IISFT-0001",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    {
+      "ledger_id": 2,
+      "debit": 41600,
+      "credit": 0
+    },
+    {
+      "ledger_id": 63,
+      "debit": 0,
+      "credit": 41600
+    }
+  ]
+}

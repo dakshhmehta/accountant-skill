@@ -1,0 +1,33 @@
+{
+  "voucher": {
+    "type": "SE",
+    "date": "2026-06-01",
+    "amount": 5880,
+    "narration": "Tax invoice SI-00027/2026 - krimali.com domain + hosting for Ms. Krimali Mehta",
+    "source_doc_type": "Tax Invoice",
+    "source_doc_no": "SI-00027/2026",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    {
+      "ledger_id": 64,
+      "debit": 5880,
+      "credit": 0
+    },
+    {
+      "ledger_id": 5,
+      "debit": 0,
+      "credit": 4983
+    },
+    {
+      "ledger_id": 13,
+      "debit": 0,
+      "credit": 448
+    },
+    {
+      "ledger_id": 14,
+      "debit": 0,
+      "credit": 449
+    }
+  ]
+}

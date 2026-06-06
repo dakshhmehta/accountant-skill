@@ -1,5 +1,18 @@
 const db = require('../lib/db');
 
+// Parse --from and --to flags
+const args = process.argv.slice(2);
+let fromDate = '';
+let toDate = '';
+for (let i = 0; i < args.length; i++) {
+  if (args[i] === '--from' && args[i+1]) fromDate = args[++i];
+  if (args[i] === '--to' && args[i+1]) toDate = args[++i];
+}
+
+const dateFilter = fromDate || toDate 
+  ? `AND v.date >= '${fromDate || '0000-00-00'}' AND v.date <= '${toDate || '9999-12-31'}'`
+  : '';
+
 // Get all ledgers with posted transactions
 const ledgers = db.prepare(`
   SELECT DISTINCT l.id, l.name, l.type
@@ -19,6 +32,9 @@ const ledgers = db.prepare(`
     l.name
 `).all();
 
+if (fromDate || toDate) {
+  console.log(`# General Ledger from ${fromDate || 'beginning'} to ${toDate || 'end'}`);
+}
 console.log('Ledger Name\tDate\tVoucher No\tType\tNarration\tDebit\tCredit\tRunning Balance');
 
 ledgers.forEach(ledger => {
@@ -32,7 +48,7 @@ ledgers.forEach(ledger => {
       l.credit
     FROM lines l
     JOIN vouchers v ON l.voucher_id = v.id
-    WHERE l.ledger_id = ? AND v.status = 'POSTED'
+    WHERE l.ledger_id = ? AND v.status = 'POSTED' ${dateFilter}
     ORDER BY v.date, v.id
   `).all(ledger.id);
 
