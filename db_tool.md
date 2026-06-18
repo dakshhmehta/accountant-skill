@@ -555,6 +555,34 @@ Derived dynamically from ledger.
 
 ---
 
+# export-general-ledger.js
+
+Exports full General Ledger with running balances. Tab-separated output, CA-audit ready.
+
+**Usage:**
+```bash
+# All-time (default)
+node scripts/export-general-ledger.js
+
+# Filter by date range
+node scripts/export-general-ledger.js --from YYYY-MM-DD --to YYYY-MM-DD
+
+# From a start date onward
+node scripts/export-general-ledger.js --from YYYY-MM-DD
+
+# Redirect to CSV
+node scripts/export-general-ledger.js --from 2026-05-01 --to 2026-05-31 > may-2026-gl.csv
+```
+
+**Output columns:** `Ledger Name | Date | Voucher No | Type | Narration | Debit | Credit | Running Balance`
+
+**Flags:**
+- `--from YYYY-MM-DD` — Start date (inclusive)
+- `--to YYYY-MM-DD` — End date (inclusive)
+- Without flags: exports all-time
+
+---
+
 # reconcile.js
 
 Supports:

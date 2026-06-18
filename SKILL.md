@@ -184,6 +184,26 @@ gst-engine.js (factory)
 
 Once initialized, the system uses the scripts in `tool/scripts/` (e.g., `post-voucher.js`, `generate-report.js`) as the primary interface for all ledger operations.
 
+### Export General Ledger
+
+Generate a full General Ledger with running balances for CA audit or month-end closing:
+
+```bash
+# All-time dump (default)
+node scripts/export-general-ledger.js
+
+# Filter by date range
+node scripts/export-general-ledger.js --from 2026-05-01 --to 2026-05-31
+
+# From a start date onward
+node scripts/export-general-ledger.js --from 2026-06-01
+
+# Redirect to CSV file
+node scripts/export-general-ledger.js --from 2026-05-01 --to 2026-05-31 > may-2026-gl.csv
+```
+
+Output format (tab-separated): `Ledger Name | Date | Voucher No | Type | Narration | Debit | Credit | Running Balance`
+
 ---
 
 ## 🤝 Initial Onboarding: Company Setup & Interview

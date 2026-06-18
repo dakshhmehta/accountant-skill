@@ -23,6 +23,7 @@ function main() {
     if (meta?.gst_registered === false) console.log(`⚠ Non-GST company — GST compliance checks skipped`);
     console.log(`Type: ${payload.voucher.type}`);
     console.log(`Amount: ${payload.voucher.amount}`);
+    console.log(`Number: ${payload.voucher.number || 'Auto'}`);
     console.log(`Date: ${payload.voucher.date}`);
     console.log(`Narration: ${payload.voucher.narration || 'N/A'}`);
     
