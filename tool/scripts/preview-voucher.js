@@ -14,6 +14,7 @@ function main() {
     console.log("=== PREVIEW VOUCHER ===");
     console.log(`Type: ${payload.voucher.type}`);
     console.log(`Amount: ${payload.voucher.amount}`);
+    console.log(`Number: ${payload.voucher.number || 'Auto'}`);
     
     const partyLine = payload.lines[0]; // Assuming first line is the party for demo
     const partyLedger = db.prepare("SELECT * FROM ledgers WHERE id = ?").get(partyLine?.ledger_id);
@@ -50,19 +51,26 @@ function main() {
             throw new Error(`GST Hard Stop: ${flags.hardStops.join(' | ')}`);
         }
 
-        console.log("\nProposed Journal Entry:");
+        console.log("");
         payload.lines.forEach(line => {
             const l = db.prepare("SELECT name FROM ledgers WHERE id = ?").get(line.ledger_id);
             const name = l ? l.name : `LedgerID:${line.ledger_id}`;
-            console.log(`${name.padEnd(20)} | Dr: ${line.debit || 0} | Cr: ${line.credit || 0}`);
+            if (parseFloat(line.debit || 0) > 0) {
+                console.log(`Dr ${name} ${line.debit}`);
+            }
+            if (parseFloat(line.credit || 0) > 0) {
+                console.log(`Cr ${name} ${line.credit}`);
+            }
         });
+        console.log(`| Entry | ${payload.voucher.number || ''} | ₹${payload.voucher.amount} | Balanced ✅ |`);
 
         if (flags.warnings.length > 0) {
             console.log("\n⚠️ GST Warnings:");
             flags.warnings.forEach(w => console.log(` - ${w}`));
         }
 
-        console.log("\nValidation Passed! This entry is safe to confirm.");
+        console.log("");
+        console.log("✅ Validation Passed — ready to post.");
     } catch (e) {
         console.error("\nValidation Failed:", e.message);
         process.exit(1);
