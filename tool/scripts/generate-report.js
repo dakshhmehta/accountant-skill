@@ -1,7 +1,6 @@
-const db = require('../lib/db');
+const { getDb, resolveCompany, getCompanyMeta } = require('../lib/db');
 
-function generateTrialBalance() {
-    // A query that sums all debits and credits per ledger
+function generateTrialBalance(db, company, meta) {
     const rows = db.prepare(`
         SELECT 
             l.name,
@@ -16,29 +15,32 @@ function generateTrialBalance() {
         GROUP BY l.id
     `).all();
 
-    console.log("=== TRIAL BALANCE ===");
+    console.log(`\n=== TRIAL BALANCE — ${meta ? meta.name : company} ===`);
     let totalDr = 0, totalCr = 0;
     
     rows.forEach(r => {
         const bal = r.net_balance;
         const dispDr = bal > 0 ? bal : 0;
         const dispCr = bal < 0 ? Math.abs(bal) : 0;
-        
-        console.log(`${r.name.padEnd(20)} | Dr: ${dispDr.toString().padStart(10)} | Cr: ${dispCr.toString().padStart(10)}`);
-        
+        console.log(`${r.name.padEnd(25)} | Dr: ${dispDr.toFixed(2).padStart(10)} | Cr: ${dispCr.toFixed(2).padStart(10)}`);
         totalDr += dispDr;
         totalCr += dispCr;
     });
 
-    console.log("-------------------------------------------------");
-    console.log(`TOTAL                | Dr: ${totalDr.toString().padStart(10)} | Cr: ${totalCr.toString().padStart(10)}`);
+    console.log('-'.repeat(55));
+    console.log(`${'TOTAL'.padEnd(25)} | Dr: ${totalDr.toFixed(2).padStart(10)} | Cr: ${totalCr.toFixed(2).padStart(10)}`);
 }
 
 function main() {
+    const company = resolveCompany();
+    const db = getDb(company);
+    const meta = getCompanyMeta(company);
     const type = process.argv[2] || 'trial-balance';
     
+    console.log(`Company: ${meta ? meta.name : company} (${company})`);
+    
     if (type === 'trial-balance') {
-        generateTrialBalance();
+        generateTrialBalance(db, company, meta);
     } else {
         console.log(`Report type ${type} not fully implemented yet.`);
     }

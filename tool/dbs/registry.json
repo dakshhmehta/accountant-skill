@@ -1,0 +1,35 @@
+{
+  "companies": {
+    "romin": {
+      "name": "Romin Interactive",
+      "fy": "apr-mar",
+      "gstin": "24AAAAA0000A1Z5",
+      "slug": "romin",
+      "created": "2026-05-21T18:05:22.926Z",
+      "gst_registered": true
+    },
+    "local": {
+      "name": "Local Shop",
+      "fy": "apr-mar",
+      "gst_registered": false,
+      "slug": "local",
+      "created": "2026-05-21T18:18:40.434Z"
+    },
+    "nn_enterprise": {
+      "name": "N N Enterprise",
+      "fy": "apr-mar",
+      "gstin": "24AODPP2602L1Z3",
+      "gst_registered": true,
+      "slug": "nn_enterprise",
+      "created": "2026-05-29T04:20:49.992Z"
+    },
+    "arihant_nx": {
+      "name": "ARIHANT NX",
+      "fy": "apr-mar",
+      "gstin": "24AEOPV0949M1ZR",
+      "gst_registered": true,
+      "slug": "arihant_nx",
+      "created": "2026-05-29T04:29:31.357Z"
+    }
+  }
+}

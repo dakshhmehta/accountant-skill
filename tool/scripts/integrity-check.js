@@ -1,13 +1,19 @@
-const db = require('../lib/db');
+const { getDb, resolveCompany, getCompanyMeta } = require('../lib/db');
 
 function main() {
-    console.log("Running SQLite PRAGMA checks...");
+    const company = resolveCompany();
+    const db = getDb(company);
+    const meta = getCompanyMeta(company);
+
+    console.log(`Integrity Check — ${meta ? meta.name : company} (${company})`);
+    console.log('-'.repeat(50));
+
     const integrity = db.prepare("PRAGMA integrity_check").all();
-    console.log("Integrity Check:", integrity);
+    console.log("Database Integrity:", JSON.stringify(integrity));
     
     const fks = db.prepare("PRAGMA foreign_key_check").all();
     if (fks.length > 0) {
-        console.error("Foreign Key Check Failed:", fks);
+        console.error("Foreign Key Check FAILED:", fks);
     } else {
         console.log("Foreign Key Check: OK");
     }
@@ -22,10 +28,15 @@ function main() {
     `).all();
     
     if (unbalanced.length > 0) {
-        console.error("Found unbalanced vouchers:", unbalanced);
+        console.error("❌ Found unbalanced vouchers:", JSON.stringify(unbalanced, null, 2));
     } else {
-        console.log("All vouchers are balanced.");
+        console.log("✅ All vouchers are balanced.");
     }
+
+    // Quick stats
+    const voucherCount = db.prepare("SELECT COUNT(*) as c FROM vouchers").get().c;
+    const ledgerCount = db.prepare("SELECT COUNT(*) as c FROM ledgers").get().c;
+    console.log(`\nStats: ${voucherCount} vouchers | ${ledgerCount} ledgers`);
 }
 
 if (require.main === module) {

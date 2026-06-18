@@ -1,3 +1,9 @@
+---
+name: accountant-skill
+description: "Full double-entry accounting engine with GST compliance. Core knowledge base for journal entries, chart of accounts, ledger management, period closing, audit controls, rectification, and financial reporting. Use when recording transactions, generating reports, managing ledgers, or performing any accounting operation. Powered by better-sqlite3 with ACID-compliant database. For Tally XML import/export, see the tally-import-export skill."
+metadata:
+---
+
 # Accountant Agent Skill Mastery Guide
 
 Welcome to the Accountant Agent Skill repository! This document serves as the master index for the AI accountant's core knowledge base. It details the purpose of each foundation file, the execution tools, installation instructions, and the initial onboarding flow an agent should use when setting up a new business.
@@ -60,11 +66,8 @@ Welcome to the Accountant Agent Skill repository! This document serves as the ma
 - **What it contains:** Document definitions and the "Document First, Entry Second" rule.
 - **Why it's important:** Ensures that the agent does not fabricate entries without underlying business proof.
 
-### 10. `tally_xml_examples.md`
-- **What it is for:** Reference templates for Tally Primitive XML.
-- **How to use it:** Use when importing GST-compliant vouchers into Tally via XML Import. Contains field-by-field templates for Sale Bills (GST Sales Invoice) with CGST/SGST split, party/income ledgers, and SAC/HSN codes.
-- **What it contains:** Index to standalone `.xml` files in `tally-examples/`, field reference table, calculation examples, and GST rate configuration rules.
-- **Why it's important:** Eliminates guesswork when generating Tally XML — ensures GSTIN, tax rates, ledger amounts, and SAC codes are correctly placed.
+### 10. Tally XML → See `tally-import-export` Skill
+Tally XML generation and import/export has been moved to a dedicated **tally-import-export** skill. Use that skill for all Tally XML work — sale/purchase invoices, credit/debit notes, payments, receipts, journals.
 
 ### 11. `transaction_language.md`
 - **What it is for:** NLP keyword mappings.
@@ -102,11 +105,81 @@ cd tool/
 # 2. Install dependencies (better-sqlite3)
 npm install
 
-# 3. Initialize the database schema (Creates accounting.db)
+# 3. Register a company (creates dbs/<slug>.db + metadata)
+node scripts/set-company.js <slug> --name "Company Name" --fy apr-mar --gstin 24AAAAA0000A1Z5
+
+# 4. Initialize the database schema for that company
 node scripts/migrate-schema.js
 
-# 4. Verify database integrity
+# 5. Verify database integrity
 node scripts/integrity-check.js
+```
+
+## 🏢 Multi-Company Architecture
+
+The system supports multiple independent companies, each with its own database.
+
+### Database Layout
+```
+tool/dbs/
+├── <company_slug>.db       # Per-company SQLite database
+├── registry.json            # Company metadata (name, FY, GSTIN)
+└── .active-company          # Session-level default company
+```
+
+### Selecting a Company
+Three mechanisms, in priority order:
+
+| Priority | Method | Example |
+|----------|--------|---------|
+| 1 (highest) | `--company` CLI flag | `node scripts/post-voucher.js payload.json --company acme` |
+| 2 | `ACCOUNTING_COMPANY` env var | `ACCOUNTING_COMPANY=acme node scripts/preview-voucher.js` |
+| 3 (default) | `.active-company` state file | `node scripts/set-company.js acme` |
+
+### Company Management Scripts
+
+**Register & activate a company:**
+```bash
+node scripts/set-company.js <slug> --name "Legal Name" --fy apr-mar --gstin GSTIN
+```
+
+**List all companies:**
+```bash
+node scripts/list-companies.js
+```
+
+### Per-Command Usage
+All generic scripts accept `--company <slug>`:
+```bash
+node scripts/post-voucher.js payload.json --company romin
+node scripts/preview-voucher.js payload.json --company romin
+node scripts/generate-report.js --company romin
+node scripts/integrity-check.js --company romin
+node scripts/ledger-query.js "Cash" --company romin
+node scripts/gst-general-ledger.js --company romin
+node scripts/export-general-ledger.js --company romin
+node scripts/close-period.js --company romin
+node scripts/db-maintenance.js --company romin
+node scripts/reverse-voucher.js SE-0001 --company romin
+node scripts/rectify-entry.js SE-0001 corrected.json --company romin
+```
+
+### Posting Engine Architecture
+
+```
+db.js (factory)
+  ├── getDb(slug)         → opens/returns dbs/<slug>.db
+  ├── resolveCompany()    → parses --company > env > .active-company
+  └── backward compat     → const db = require('./lib/db') still works
+
+posting-engine.js (factory)
+  └── createPostingEngine(db) → prepared statements bound to that db
+
+validators.js (factory)
+  └── createValidators(db) → validation functions bound to that db
+
+gst-engine.js (factory)
+  └── createGstEngine(db) → GST logic bound to that db
 ```
 
 Once initialized, the system uses the scripts in `tool/scripts/` (e.g., `post-voucher.js`, `generate-report.js`) as the primary interface for all ledger operations.
@@ -133,23 +206,72 @@ Output format (tab-separated): `Ledger Name | Date | Voucher No | Type | Narrati
 
 ---
 
-## 🤝 Initial Onboarding: Accountant Initialization Interview
+## 🤝 Initial Onboarding: Company Setup & Interview
 
-When the Accountant Agent is installed or attached to a new workspace, it should behave like a professional human accountant onboarding a new client. 
+### User Triggers
 
-Before recording any daily transactions, the agent MUST ask the user the following questions to properly initialize the books:
+The agent (CA) should recognize these user phrases as requests to set up a new company or start an interview:
+
+- "Start a new accounting company"
+- "Setup new books for company"
+- "Setup accounts for new company"
+- "Start interview" / "Start interview for company"
+- "Start interview" (without company name — confirm active company first)
+
+### Phase 0: Company Identity (Mandatory First Step)
+
+Before any accounting questions, establish the company identity:
+
+1. **Company Slug (always unique — ask user explicitly, do NOT auto-generate):**
+   > "What short slug should we use for this company? (e.g., 'romin', 'acme' — used for the database file and all CLI commands. Must be unique across all companies.)"
+   - If slug already exists → warn user and ask for a different one.
+
+2. **Company Name (may not be unique across companies):**
+   > "What is the legal name of the business?"
+
+3. **GSTIN (optional):**
+   > "Does the company have a GSTIN? If yes, please provide it."
+   - If GSTIN IS provided → GST compliance rules enforced (CGST/SGST/IGST, GSTIN validation)
+   - If GSTIN is NOT provided → company is NOT GST registered → GST compliance checks are skipped. Mark as unregistered.
+
+After Phase 0, register the company:
+```bash
+node scripts/set-company.js <slug> --name "Legal Name" [--gstin GSTIN] [--fy apr-mar]
+node scripts/migrate-schema.js
+```
+
+### Phase 1: The Interview (After Company Is Registered)
+
+The agent MUST ask the following questions to properly initialize the books:
 
 1. **Business Entity & Reporting Period:**
-   > "What is the legal name of the business, and what is your financial year (e.g., April to March or Jan to Dec)?"
+   > "What is your financial year (e.g., April to March or Jan to Dec)?"
+   - If already provided via --fy flag, skip or confirm.
+
 2. **Opening Balances (The Transition):**
    > "Are we starting fresh, or do you have an existing Trial Balance / Balance Sheet from a previous system that we need to import as opening balances?"
+
 3. **Cash & Banks:**
    > "What are your primary bank accounts and cash registers? We need to set these up as your core Asset ledgers."
+
 4. **Chart of Accounts (COA) Customization:**
    > "Do you have specific expense/income categories you want to track granularly, or should I initialize a standard Chart of Accounts for your industry?"
+
 5. **Initial Capital (For New Businesses):**
    > "If this is a brand new business, how much initial owner's capital has been introduced, and into which bank or cash account was it deposited?"
+
 6. **Outstanding Dues (Day One AR/AP):**
    > "Are there any pending payables to suppliers or receivables from customers that we need to record on day one to ensure accurate cash flow tracking?"
 
-Once these questions are answered, the agent will use the `tool/` scripts to generate the Opening Entries (`OE`) and establish the initial Trial Balance.
+### Special Case: "Start Interview" Without Company Name
+
+If the user says "start interview" without specifying a company:
+
+1. Check if an active company is set (`node scripts/list-companies.js`)
+2. Confirm: "You have <name> (<slug>) as the active company. Start interview for this company?"
+3. If no active company → "No active company set. Which company should we work with? Here are the registered companies: <list>. Or would you like to set up a new one?"
+4. Only proceed after explicit user confirmation.
+
+### After Onboarding
+
+Once all questions are answered, the agent will generate the Opening Entries (`OE`) and establish the initial Trial Balance.

@@ -1,6 +1,6 @@
-const db = require('../lib/db');
+const { getDb, resolveCompany, getCompanyMeta } = require('../lib/db');
 
-function migrate() {
+function migrate(db) {
   console.log('Running schema migrations...');
 
   db.exec(`
@@ -8,7 +8,6 @@ function migrate() {
       version INTEGER PRIMARY KEY
     );
 
-    -- Ledger Groups (e.g. Assets, Liabilities)
     CREATE TABLE IF NOT EXISTS ledger_groups (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT NOT NULL UNIQUE,
@@ -16,7 +15,6 @@ function migrate() {
       FOREIGN KEY(parent_group_id) REFERENCES ledger_groups(id)
     );
 
-    -- Ledgers (Postable accounts)
     CREATE TABLE IF NOT EXISTS ledgers (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT NOT NULL UNIQUE,
@@ -31,7 +29,6 @@ function migrate() {
       FOREIGN KEY(parent_group_id) REFERENCES ledger_groups(id)
     );
 
-    -- Vouchers (Journal Entries)
     CREATE TABLE IF NOT EXISTS vouchers (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       voucher_no TEXT UNIQUE,
@@ -42,11 +39,10 @@ function migrate() {
       source_doc_type TEXT,
       source_doc_no TEXT,
       status TEXT NOT NULL DEFAULT 'DRAFT' CHECK(status IN ('DRAFT', 'PREVIEWED', 'CONFIRMED', 'POSTED', 'REVERSED')),
-      request_id TEXT UNIQUE, -- for idempotency
+      request_id TEXT UNIQUE,
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
 
-    -- Lines (Debits and Credits)
     CREATE TABLE IF NOT EXISTS lines (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       voucher_id INTEGER NOT NULL,
@@ -57,7 +53,6 @@ function migrate() {
       FOREIGN KEY(ledger_id) REFERENCES ledgers(id)
     );
 
-    -- Audit Log (Immutable record)
     CREATE TABLE IF NOT EXISTS audit_log (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       event_type TEXT NOT NULL,
@@ -67,7 +62,6 @@ function migrate() {
       timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
     );
     
-    -- Global Configuration
     CREATE TABLE IF NOT EXISTS config (
       key TEXT PRIMARY KEY,
       value TEXT
@@ -77,8 +71,17 @@ function migrate() {
   console.log('Schema migration complete.');
 }
 
+function main() {
+  const company = resolveCompany();
+  const db = getDb(company);
+  const meta = getCompanyMeta(company);
+  
+  console.log(`Migrating schema for: ${meta ? meta.name : company} (${company})`);
+  migrate(db);
+}
+
 if (require.main === module) {
-  migrate();
+  main();
 }
 
 module.exports = { migrate };

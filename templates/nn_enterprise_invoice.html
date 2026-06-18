@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page { margin: 10mm; size: A4; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 15px 25px;
+    color: #000;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .header h1 {
+    font-size: 16px;
+    margin: 0 0 3px 0;
+    font-weight: bold;
+  }
+  .header .addr {
+    font-size: 9px;
+  }
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+  }
+  .info-table td {
+    vertical-align: top;
+    padding: 2px 5px;
+    font-size: 10px;
+  }
+  .info-table .label {
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  .section-title {
+    font-weight: bold;
+    font-size: 10px;
+    border-bottom: 1px solid #000;
+    margin-top: 6px;
+    margin-bottom: 2px;
+  }
+  .tax-invoice {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-decoration: underline;
+  }
+  .items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 10px;
+  }
+  .items-table th {
+    border: 1px solid #000;
+    padding: 4px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+  }
+  .items-table td {
+    border: 1px solid #000;
+    padding: 4px;
+    text-align: center;
+    font-size: 10px;
+  }
+  .items-table td.left { text-align: left; }
+  .items-table td.right { text-align: right; }
+  .items-table td.blank { border: none; }
+  .totals-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 10px;
+  }
+  .totals-table th, .totals-table td {
+    border: 1px solid #000;
+    padding: 4px;
+    text-align: center;
+  }
+  .totals-table td.right { text-align: right; }
+  .footer {
+    margin-top: 15px;
+    font-size: 10px;
+  }
+  .footer .amount-words {
+    margin: 6px 0;
+    font-weight: bold;
+  }
+  .footer .declaration {
+    margin: 10px 0;
+    font-size: 9px;
+  }
+  .signature {
+    text-align: right;
+    margin-top: 25px;
+    font-size: 10px;
+    font-weight: bold;
+  }
+  @media print {
+    body { padding: 10px; }
+    @page { margin: 8mm; }
+  }
+</style>
+</head>
+<body>
+<!--
+  N N ENTERPRISE — MASTER INVOICE TEMPLATE
+  Approved by Meet on 01-Jun-2026
+  All future invoices must use this EXACT format.
+  Do not deviate.
+-->
+<div class="header">
+  <h1>N N ENTERPRISE</h1>
+  <div class="addr">GODOWN NO 1, PLOT NO 115, RS NO.7/1, 7/2 &amp; 173, RAGHURAJ NAGAR, MIRZAPAR, TA BHUJ, KUTCH</div>
+  <div>GSTIN/UIN: 24AODPP2602L1Z3</div>
+  <div>State Name: Gujarat, Code: 24</div>
+</div>
+
+<table class="info-table">
+  <tr>
+    <td width="50%">
+      <div class="section-title">Buyer (Bill to)</div>
+      <!-- BUYER_DETAILS -->
+    </td>
+    <td width="50%" style="text-align: right;">
+      <table style="float: right; font-size: 10px;">
+        <tr><td class="label">Invoice No.</td><td style="padding-left: 15px;"><strong><!-- INV_NO --></strong></td></tr>
+        <tr><td class="label">Dated</td><td style="padding-left: 15px;"><!-- INV_DATE --></td></tr>
+        <tr><td class="label">Place of Supply:</td><td style="padding-left: 15px;"><strong><!-- POS --></strong></td></tr>
+        <tr><td class="label">Reverse Charge:</td><td style="padding-left: 15px;"><strong>No</strong></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div class="tax-invoice">TAX INVOICE</div>
+
+<table class="items-table">
+  <thead>
+    <tr>
+      <th>Sl</th>
+      <th>Description of Goods</th>
+      <th>HSN/SAC</th>
+      <th>Qty</th>
+      <th>Unit</th>
+      <th>Rate</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- LINE_ITEMS -->
+    <!-- TOTALS_BLOCK -->
+  </tbody>
+</table>
+
+<div class="footer">
+  <div class="amount-words">
+    Amount Chargeable (in words):<br>
+    <strong><!-- AMT_WORDS --></strong>
+  </div>
+</div>
+
+<table class="totals-table">
+  <thead>
+    <tr>
+      <th>HSN/SAC</th>
+      <th>Taxable Value</th>
+      <th><!-- TAX_LABEL --></th>
+      <th><!-- TAX_LABEL2 --> Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- TAX_BREAKUP -->
+  </tbody>
+</table>
+
+<div class="footer">
+  <div class="amount-words">
+    Tax Amount (in words): <strong><!-- TAX_WORDS --></strong>
+  </div>
+  <div class="declaration">
+    <strong>Declaration:</strong> We declare that this invoice shows the actual price of the goods described and that all particulars are true and correct.
+  </div>
+</div>
+
+<div class="signature">
+  for N N Enterprise<br><br>
+  <strong>Authorised Signatory</strong>
+</div>
+
+<div style="text-align: center; font-size: 8px; margin-top: 20px; color: #999;">
+  This is a Computer Generated Invoice
+</div>
+
+</body>
+</html>
