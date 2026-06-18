@@ -60,13 +60,34 @@ Welcome to the Accountant Agent Skill repository! This document serves as the ma
 - **What it contains:** Document definitions and the "Document First, Entry Second" rule.
 - **Why it's important:** Ensures that the agent does not fabricate entries without underlying business proof.
 
-### 10. `transaction_language.md`
+### 10. `tally_xml_examples.md`
+- **What it is for:** Reference templates for Tally Primitive XML.
+- **How to use it:** Use when importing GST-compliant vouchers into Tally via XML Import. Contains field-by-field templates for Sale Bills (GST Sales Invoice) with CGST/SGST split, party/income ledgers, and SAC/HSN codes.
+- **What it contains:** Index to standalone `.xml` files in `tally-examples/`, field reference table, calculation examples, and GST rate configuration rules.
+- **Why it's important:** Eliminates guesswork when generating Tally XML — ensures GSTIN, tax rates, ledger amounts, and SAC codes are correctly placed.
+
+### 11. `transaction_language.md`
 - **What it is for:** NLP keyword mappings.
 - **How to use it:** Use as a dictionary to parse user intent and colloquials into formal accounting commands.
 - **What it contains:** Extensive lists of keywords, phrases, and Indian/Global colloquialisms mapped to specific voucher types.
 - **Why it's important:** Enables seamless, conversational human-agent interaction without requiring the user to speak in strict accounting terms.
 
 ---
+
+## 📋 GST Rules
+
+### GSTIN-Based Tax Jurisdiction Rule
+
+When creating an invoice (Sales Entry / SE), the system determines whether to apply **CGST+SGST** (intrastate) or **IGST** (interstate) based on the following priority:
+
+1. **If the party ledger has NO valid GSTIN** → **Always use CGST/SGST** (intrastate)
+2. **If the party ledger HAS a valid GSTIN** → Check state codes:
+   - Same state as company → CGST/SGST
+   - Different state → IGST
+
+This rule is enforced in `tool/lib/gst-engine.js` via the `determineGST()` function. The `partyGSTIN` parameter is checked first before evaluating interstate status.
+
+**Why:** Without a valid GSTIN, the party cannot claim interstate GST benefits, so the transaction defaults to intrastate treatment.
 
 ## 🛠 Installation & Setup
 
@@ -89,6 +110,26 @@ node scripts/integrity-check.js
 ```
 
 Once initialized, the system uses the scripts in `tool/scripts/` (e.g., `post-voucher.js`, `generate-report.js`) as the primary interface for all ledger operations.
+
+### Export General Ledger
+
+Generate a full General Ledger with running balances for CA audit or month-end closing:
+
+```bash
+# All-time dump (default)
+node scripts/export-general-ledger.js
+
+# Filter by date range
+node scripts/export-general-ledger.js --from 2026-05-01 --to 2026-05-31
+
+# From a start date onward
+node scripts/export-general-ledger.js --from 2026-06-01
+
+# Redirect to CSV file
+node scripts/export-general-ledger.js --from 2026-05-01 --to 2026-05-31 > may-2026-gl.csv
+```
+
+Output format (tab-separated): `Ledger Name | Date | Voucher No | Type | Narration | Debit | Credit | Running Balance`
 
 ---
 

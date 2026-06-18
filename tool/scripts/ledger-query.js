@@ -19,7 +19,7 @@ function main() {
         JOIN vouchers v ON l.voucher_id = v.id
         WHERE l.ledger_id = ? AND v.status = 'POSTED'
         ORDER BY v.date ASC, v.id ASC
-    `).all();
+    `).all(ledger.id);
     
     console.log(`=== LEDGER: ${ledgerName} ===`);
     lines.forEach(l => {

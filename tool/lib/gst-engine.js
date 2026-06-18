@@ -13,12 +13,22 @@ function getTaxLedgerId(name) {
     return l.id;
 }
 
-function determineGST(baseAmount, taxRate, partyState, companyState, isPurchase, reverseChargeFlag = false) {
+function determineGST(baseAmount, taxRate, partyState, companyState, isPurchase, reverseChargeFlag = false, partyGSTIN = null) {
     const taxLines = [];
     if (!taxRate || taxRate === 0) return taxLines;
 
     const taxAmount = (baseAmount * taxRate) / 100;
-    const isInterstate = partyState && companyState && (partyState.toLowerCase() !== companyState.toLowerCase());
+    
+    // RULE: If party has no valid GSTIN, always use CGST/SGST (intrastate)
+    const hasGSTIN = partyGSTIN && partyGSTIN.trim().length > 0;
+    let isInterstate = false;
+    
+    if (hasGSTIN) {
+        isInterstate = partyState && companyState && (partyState.toLowerCase() !== companyState.toLowerCase());
+    } else {
+        // No GSTIN = always intrastate (CGST/SGST)
+        isInterstate = false;
+    }
 
     const prefix = isPurchase ? 'Input' : 'Output';
     
