@@ -2,3 +2,4 @@ node_modules/
 accounting.db
 accounting.db-wal
 accounting.db-shm
+dbs/

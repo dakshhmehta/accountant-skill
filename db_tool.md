@@ -24,9 +24,10 @@ Primary stack:
 ```text
 SQLite
 better-sqlite3
-single .db file
-exec tool
+per-company .db files in dbs/<slug>.db
+exec tool + --company flag
 scripts/ syscall layer
+company registry (dbs/registry.json)
 ```
 
 Use this skill whenever the agent:
@@ -57,6 +58,59 @@ Every financial mutation must satisfy:
 ```
 
 Never violate these.
+
+---
+
+# Company Selection & Multi-DB Architecture
+
+System supports multiple independent companies. Each company has its own .db file.
+
+```
+tool/dbs/
+├── <slug>.db           # Per-company database
+├── registry.json        # { "companies": { "slug": { name, fy, gstin } } }
+└── .active-company      # Session default
+```
+
+## Selecting the Active Company
+
+Three resolution methods, checked in this order:
+
+1. `--company <slug>` CLI flag (per-command, highest priority)
+2. `ACCOUNTING_COMPANY` environment variable (session-level)
+3. `.active-company` file (persistent default, set via `set-company.js`)
+
+## Company Management
+
+```bash
+# Register and activate
+node scripts/set-company.js <slug> --name "Company Name" --fy apr-mar --gstin GSTIN
+
+# List all
+node scripts/list-companies.js
+
+# Switch active company
+node scripts/set-company.js <other_slug>
+```
+
+## Per-Command Usage
+
+All generic scripts accept `--company`:
+
+```bash
+node scripts/post-voucher.js payload.json --company romin
+node scripts/preview-voucher.js payload.json --company romin
+node scripts/generate-report.js --company romin
+```
+
+## DB Factory Pattern
+
+```javascript
+const { getDb, resolveCompany } = require('./lib/db');
+const db = getDb(resolveCompany()); // opens dbs/<slug>.db with WAL/FK pragmas
+```
+
+Backward compatible: `const db = require('./lib/db')` auto-resolves via active company.
 
 ---
 
@@ -318,6 +372,8 @@ Preferred structure:
 
 ```text
 scripts/
+ set-company.js
+ list-companies.js
  post-voucher.js
  preview-voucher.js
  reverse-voucher.js
@@ -334,12 +390,15 @@ lib/
  db.js
  validators.js
  posting-engine.js
+ gst-engine.js
  interpreter.js
 ```
 
 Scripts should be deterministic.
 
 One script = one accounting verb.
+
+All scripts accept `--company <slug>` to target a specific company database.
 
 ---
 
@@ -356,7 +415,10 @@ Invocation:
 
 ```bash
 node scripts/post-voucher.js payload.json
+node scripts/post-voucher.js payload.json --company romin
 ```
+
+Shows company name before posting. Refuses unconfirmed vouchers (Maker-Checker).
 
 Must enforce Maker-Checker protocol:
 Do not run directly from user intent.
@@ -395,15 +457,25 @@ Enforces:
 - Logic check
 - Risk check
 - Control check
+- GST jurisdiction validation
 
 Shows:
+- **Company name and GSTIN** (which company are we posting to?)
 - proposed journal
 - affected ledgers
-- debit/credit totals
-- warnings
+- debit/credit totals with sum line
+- warnings (GST, missing fields)
 - posting impact
+- **CONFIRMATION prompt** — requires explicit single-word approval ("yes", "go", "approved", "do it")
 
 No writes. Mandatory step before commit.
+
+Invocation:
+
+```bash
+node scripts/preview-voucher.js payload.json
+node scripts/preview-voucher.js payload.json --company romin
+```
 
 ---
 
@@ -563,7 +635,11 @@ Supports:
 
 # migrate-schema.js
 
-Only allowed schema change path.
+Only allowed schema change path. Runs against a specific company's database.
+
+```bash
+node scripts/migrate-schema.js --company romin
+```
 
 Track:
 
@@ -571,7 +647,7 @@ Track:
 schema_migrations
 ```
 
-Never alter schema ad hoc.
+Never alter schema ad hoc. Schema changes apply to the target company only.
 
 ---
 
@@ -583,9 +659,11 @@ Every script should reuse:
 lib/db.js
 lib/validators.js
 lib/posting-engine.js
+lib/gst-engine.js
 ```
 
-Avoid duplicated logic.
+Use `createPostingEngine(db)`, `createValidators(db)`, and `createGstEngine(db)` factory functions when targeting a specific company.
+For backward compatibility, the module also exports lazy auto-resolving singletons that pick up the active company.
 
 ---
 
@@ -651,7 +729,7 @@ continue
 Before risky operations:
 
 ```bash
-cp accounting.db accounting-backup.db
+cp dbs/<slug>.db dbs/<slug>-backup-$(date +%Y%m%d).db
 ```
 
 Prefer snapshot before:
@@ -776,7 +854,7 @@ Scripts enforce truth.
 Prefer:
 
 ```text
-one database
+one database per company
 one write path
 one posting engine
 many safe script verbs
@@ -789,5 +867,6 @@ This minimizes:
 - duplicate posting
 - integrity failures
 - reconciliation problems
+- cross-company data leaks
 
 and maximizes trust.

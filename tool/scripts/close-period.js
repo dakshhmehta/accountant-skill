@@ -1,15 +1,23 @@
-const db = require('../lib/db');
+const { getDb, resolveCompany, getCompanyMeta } = require('../lib/db');
 
-function closePeriod() {
-    console.log("Starting period close...");
-    
-    // Simple mock logic for setting config flag
+function closePeriod(db) {
     const stmt = db.prepare("INSERT OR REPLACE INTO config (key, value) VALUES ('period_status', 'CLOSED')");
     stmt.run();
+    return 'CLOSED';
+}
+
+function main() {
+    const company = resolveCompany();
+    const db = getDb(company);
+    const meta = getCompanyMeta(company);
+
+    console.log(`Closing period for: ${meta ? meta.name : company} (${company})`);
     
-    console.log("Period locked. Status set to CLOSED.");
+    const status = closePeriod(db);
+    console.log(`✓ Period locked. Status set to ${status}.`);
+    console.log('⚠ No further postings will be allowed until reopened.');
 }
 
 if (require.main === module) {
-    closePeriod();
+    main();
 }

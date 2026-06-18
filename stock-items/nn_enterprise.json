@@ -1,0 +1,31 @@
+{
+  "company": "N N Enterprise",
+  "slug": "nn_enterprise",
+  "last_updated": "2026-06-01T10:30:00+05:30",
+  "items": [
+    {
+      "name": "Dabeli Masala",
+      "hsn": "09109990",
+      "gst_rate": 5,
+      "uom": "KG"
+    },
+    {
+      "name": "Masala Sing",
+      "hsn": "20081920",
+      "gst_rate": 5,
+      "uom": "KG"
+    },
+    {
+      "name": "Spicy Chutney",
+      "hsn": "21039090",
+      "gst_rate": 5,
+      "uom": "KG"
+    },
+    {
+      "name": "Sweet Chutney",
+      "hsn": "21039090",
+      "gst_rate": 5,
+      "uom": "KG"
+    }
+  ]
+}

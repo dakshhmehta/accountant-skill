@@ -8,7 +8,7 @@ Use this when the agent needs:
 
 - Local structured memory
 - Ledger-like storage
-- Fast single-file database
+- Fast per-company databases (dbs/<slug>.db)
 - Search/query capability
 - Aggregation/reporting
 - Low-tool-call operations through a reusable utility wrapper
