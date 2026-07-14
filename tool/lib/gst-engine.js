@@ -83,7 +83,10 @@ function runMissedGSTRules(voucherData, linesData, partyLedger, companyState) {
     }
 
     // Rule 4 & 5: Wrong tax jurisdiction
-    if (partyLedger && partyLedger.state_code && companyState) {
+    // SKIP if party has no valid GSTIN — without GSTIN, always intrastate (CGST/SGST)
+    const hasPartyGSTIN = partyLedger && partyLedger.gstin && partyLedger.gstin.trim().length > 0;
+    
+    if (partyLedger && partyLedger.state_code && companyState && hasPartyGSTIN) {
         const isInterstate = partyLedger.state_code.toLowerCase() !== companyState.toLowerCase();
         
         const hasIGST = linesData.some(l => {

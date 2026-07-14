@@ -1,0 +1,23 @@
+{
+  "voucher": {
+    "type": "BR",
+    "number": "BR-0054",
+    "voucher_no": "BR-0054",
+    "date": "2026-07-10",
+    "amount": 5800,
+    "narration": "Part payment received against SI-00040/2026 · URN: x51916 · Paid by Daksh Mehta",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    {
+      "ledger_id": 2,
+      "debit": 5800,
+      "credit": 0
+    },
+    {
+      "ledger_id": 79,
+      "debit": 0,
+      "credit": 5800
+    }
+  ]
+}

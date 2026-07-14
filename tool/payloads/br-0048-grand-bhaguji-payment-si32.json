@@ -1,0 +1,23 @@
+{
+  "voucher": {
+    "type": "BR",
+    "number": "BR-0048",
+    "voucher_no": "BR-0048",
+    "date": "2026-06-16",
+    "amount": 4205,
+    "narration": "Payment received from The Grand Bhaguji against SI-32/2026 — dc in DCB Bank on 16-06-2026",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    {
+      "ledger_id": 2,
+      "debit": 4205,
+      "credit": 0
+    },
+    {
+      "ledger_id": 71,
+      "debit": 0,
+      "credit": 4205
+    }
+  ]
+}

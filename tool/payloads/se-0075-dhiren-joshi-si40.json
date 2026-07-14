@@ -1,0 +1,35 @@
+{
+  "voucher": {
+    "type": "SE",
+    "number": "SE-0075",
+    "voucher_no": "SE-0075",
+    "date": "2026-07-10",
+    "amount": 11800,
+    "narration": "Domain hosting services - desaicards.com renewal (DH-00018/2026 → SI-00040/2026)",
+    "status": "CONFIRMED",
+    "source_doc_type": "Sales Invoice",
+    "source_doc_no": "SI-00040/2026"
+  },
+  "lines": [
+    {
+      "ledger_id": 79,
+      "debit": 11800,
+      "credit": 0
+    },
+    {
+      "ledger_id": 5,
+      "debit": 0,
+      "credit": 10000
+    },
+    {
+      "ledger_id": 13,
+      "debit": 0,
+      "credit": 900
+    },
+    {
+      "ledger_id": 14,
+      "debit": 0,
+      "credit": 900
+    }
+  ]
+}

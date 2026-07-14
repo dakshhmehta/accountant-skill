@@ -1,0 +1,35 @@
+{
+  "voucher": {
+    "type": "SE",
+    "number": "SE-0067",
+    "voucher_no": "SE-0067",
+    "date": "2026-06-16",
+    "amount": 4205,
+    "narration": "Tax invoice SI-00032/2026 — The Grand Bhaguji — Domain hosting services",
+    "status": "CONFIRMED",
+    "source_doc_type": "Sales Invoice",
+    "source_doc_no": "SI-00032/2026"
+  },
+  "lines": [
+    {
+      "ledger_id": 71,
+      "debit": 4205,
+      "credit": 0
+    },
+    {
+      "ledger_id": 5,
+      "debit": 0,
+      "credit": 3563.56
+    },
+    {
+      "ledger_id": 13,
+      "debit": 0,
+      "credit": 320.72
+    },
+    {
+      "ledger_id": 14,
+      "debit": 0,
+      "credit": 320.72
+    }
+  ]
+}

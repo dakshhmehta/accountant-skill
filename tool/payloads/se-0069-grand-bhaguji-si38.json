@@ -1,0 +1,35 @@
+{
+  "voucher": {
+    "type": "SE",
+    "number": "SE-0069",
+    "voucher_no": "SE-0069",
+    "date": "2026-07-07",
+    "amount": 13863,
+    "narration": "Tax invoice SI-00038/2026 — Shri Bhojay Sarvodaya Trust — Domain hosting services",
+    "status": "DRAFT",
+    "source_doc_type": "Sales Invoice",
+    "source_doc_no": "SI-00038/2026"
+  },
+  "lines": [
+    {
+      "ledger_id": 78,
+      "debit": 13863,
+      "credit": 0
+    },
+    {
+      "ledger_id": 5,
+      "debit": 0,
+      "credit": 11748.30
+    },
+    {
+      "ledger_id": 13,
+      "debit": 0,
+      "credit": 1057.35
+    },
+    {
+      "ledger_id": 14,
+      "debit": 0,
+      "credit": 1057.35
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "voucher": {
+    "type": "SE",
+    "number": "SE-0070",
+    "voucher_no": "SE-0070",
+    "date": "2026-07-07",
+    "amount": 70500,
+    "narration": "Tax invoice SI-00039/2026 — Shri Bhojay Sarvodaya Trust — Website design and development services",
+    "status": "CONFIRMED",
+    "source_doc_type": "Sales Invoice",
+    "source_doc_no": "SI-00039/2026"
+  },
+  "lines": [
+    {
+      "ledger_id": 78,
+      "debit": 70500,
+      "credit": 0
+    },
+    {
+      "ledger_id": 8,
+      "debit": 0,
+      "credit": 59745.76
+    },
+    {
+      "ledger_id": 13,
+      "debit": 0,
+      "credit": 5377.12
+    },
+    {
+      "ledger_id": 14,
+      "debit": 0,
+      "credit": 5377.12
+    }
+  ]
+}

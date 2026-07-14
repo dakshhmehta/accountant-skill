@@ -1,0 +1,24 @@
+{
+  "voucher": {
+    "type": "BR",
+    "number": "BR-0047",
+    "date": "2026-07-06",
+    "amount": 115000,
+    "narration": "Loan received from Priya Madam for payroll processing - deposited into DCB Bank",
+    "status": "DRAFT",
+    "source_doc_type": "Loan Agreement",
+    "source_doc_no": "LOAN/2026-07/001"
+  },
+  "lines": [
+    {
+      "ledger_id": 2,
+      "debit": 115000,
+      "credit": 0
+    },
+    {
+      "ledger_id": 77,
+      "debit": 0,
+      "credit": 115000
+    }
+  ]
+}
