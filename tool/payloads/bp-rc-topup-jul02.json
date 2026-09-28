@@ -1,0 +1,15 @@
+{
+  "voucher": {
+    "type": "BP",
+    "date": "2026-07-02",
+    "amount": 5005.57,
+    "narration": "RC wallet topup ₹5,000 via NEFT using Razorpay + PG fee ₹5.57 (Ref: pay_T8ZvPNemwlzxPJ | Txn: 302452340, 302452339)",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 46, "debit": 5000.00, "credit": 0 },
+    { "ledger_id": 16, "debit": 5.57, "credit": 0 },
+    { "ledger_id": 46, "debit": 0, "credit": 5.57 },
+    { "ledger_id": 2, "debit": 0, "credit": 5000.00 }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "voucher": {
+    "type": "JE",
+    "date": "2026-06-30",
+    "amount": 1.06,
+    "voucher_no": "JE-0030",
+    "narration": "Correction: IGST shortfall on PE-0017 (₹0.42), PE-0018 (₹0.22), PE-0019 (₹0.42) vs GSTR-2B — Jun 2026",
+    "status": "CONFIRMED",
+    "_review_flag_passed": true
+  },
+  "lines": [
+    { "ledger_id": 20, "debit": 1.06, "credit": 0 },
+    { "ledger_id": 46, "debit": 0, "credit": 1.06 }
+  ]
+}

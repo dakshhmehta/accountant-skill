@@ -1,3 +1,8 @@
+---
+name: gstr2b-reconsile
+description: Reconcile GST portal filings against the accounting books using read-only matching and review.
+---
+
 # gstr2b-reconsile
 
 > Minimal GST reconciliation instruction skill. No scripts. Agent-driven.

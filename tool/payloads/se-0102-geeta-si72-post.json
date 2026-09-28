@@ -1,0 +1,19 @@
+{
+  "voucher": {
+    "type": "SE",
+    "number": "SE-0102",
+    "voucher_no": "SE-0102",
+    "date": "2026-09-01",
+    "amount": 1760.0,
+    "narration": "Tax invoice SI-00072/2026 — GEETA PHARMA — almightypharma.com domain renewal (₹1,760) — 18% GST: Output CGST ₹134.24 + Output SGST ₹134.23 (net taxable ₹1,491.53)",
+    "source_doc_type": "Sales Invoice",
+    "source_doc_no": "SI-00072/2026",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 107, "debit": 1760.0, "credit": 0 },
+    { "ledger_id": 82, "debit": 0, "credit": 1491.53 },
+    { "ledger_id": 13, "debit": 0, "credit": 134.24 },
+    { "ledger_id": 14, "debit": 0, "credit": 134.23 }
+  ]
+}

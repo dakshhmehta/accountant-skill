@@ -1,0 +1,7 @@
+{
+  "voucher": {"type":"BR","number":"BR-0071","voucher_no":"BR-0071","date":"2026-06-25","amount":6180,"narration":"Payment received against SI-00041/2026 — The Dholavira Resort (captured vs proforma DH-00037, paid 24/25 Jun)","status":"CONFIRMED"},
+  "lines":[
+    {"ledger_id":2,"debit":6180,"credit":0},
+    {"ledger_id":98,"debit":0,"credit":6180}
+  ]
+}

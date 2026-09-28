@@ -1,0 +1,23 @@
+{
+  "voucher": {
+    "type": "BR",
+    "number": "BR-NK-CASH",
+    "voucher_no": "BR-NK-CASH",
+    "date": "2026-07-25",
+    "amount": 12800.00,
+    "narration": "Cash advance received from NK Firms against DH-00028/2026",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    {
+      "ledger_id": 1,
+      "debit": 12800.00,
+      "credit": 0
+    },
+    {
+      "ledger_id": 85,
+      "debit": 0,
+      "credit": 12800.00
+    }
+  ]
+}

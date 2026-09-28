@@ -1,0 +1,17 @@
+{
+  "voucher": {
+    "type": "BR",
+    "number": "BR-0080",
+    "voucher_no": "BR-0080",
+    "date": "2026-09-01",
+    "amount": 960.0,
+    "narration": "Payment received from GEETA PHARMA against SI-00071/2026 — bestbuddies.in domain renewal — credited to DCB Bank on 01-Sep-2026",
+    "source_doc_type": "Bank Receipt",
+    "source_doc_no": "SI-00071/2026",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 2, "debit": 960.0, "credit": 0 },
+    { "ledger_id": 107, "debit": 0, "credit": 960.0 }
+  ]
+}

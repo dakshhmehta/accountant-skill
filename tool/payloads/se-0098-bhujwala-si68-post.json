@@ -1,0 +1,17 @@
+{
+  "voucher": {
+    "type": "SE",
+    "date": "2026-08-31",
+    "amount": 16760.00,
+    "narration": "Tax invoice SI-00068/2026 — Bhujwala, Jehan (Shergarh Tented Camp) — shergarh.com hosting renewal (2 years) — 18% GST: Output CGST ₹1,278.31 + Output SGST ₹1,278.30 (net taxable ₹14,203.39)",
+    "status": "CONFIRMED",
+    "source_doc_type": "Sales Invoice",
+    "source_doc_no": "SI-00068/2026"
+  },
+  "lines": [
+    { "ledger_id": 104, "debit": 16760.00, "credit": 0 },
+    { "ledger_id": 83, "debit": 0, "credit": 14203.39 },
+    { "ledger_id": 13, "debit": 0, "credit": 1278.31 },
+    { "ledger_id": 14, "debit": 0, "credit": 1278.30 }
+  ]
+}

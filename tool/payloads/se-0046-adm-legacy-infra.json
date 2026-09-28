@@ -1,0 +1,40 @@
+{
+  "voucher": {
+    "type": "SE",
+    "number": "SE-0076",
+    "voucher_no": "SE-0076",
+    "date": "2026-07-21",
+    "amount": 4999,
+    "narration": "Domain admlegacy.com & Hosting (dristal server) — DH-00040/2026 → SI-00046/2026 — ADM Legacy Infra (GSTIN: 24ABSFA0217G1ZR)",
+    "status": "CONFIRMED",
+    "source_doc_type": "Sales Invoice",
+    "source_doc_no": "SI-00046/2026"
+  },
+  "lines": [
+    {
+      "ledger_id": 81,
+      "debit": 4999,
+      "credit": 0
+    },
+    {
+      "ledger_id": 82,
+      "debit": 0,
+      "credit": 1491.52
+    },
+    {
+      "ledger_id": 83,
+      "debit": 0,
+      "credit": 2744.92
+    },
+    {
+      "ledger_id": 13,
+      "debit": 0,
+      "credit": 381.28
+    },
+    {
+      "ledger_id": 14,
+      "debit": 0,
+      "credit": 381.28
+    }
+  ]
+}

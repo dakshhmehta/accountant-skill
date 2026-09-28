@@ -1,0 +1,23 @@
+{
+  "voucher": {
+    "type": "CR",
+    "number": "CR-0002",
+    "voucher_no": "CR-0002",
+    "date": "2026-07-11",
+    "amount": 6000,
+    "narration": "Cash received from Dhiren Joshi via Daksh — balance payment against SI-00040",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    {
+      "ledger_id": 44,
+      "debit": 6000,
+      "credit": 0
+    },
+    {
+      "ledger_id": 79,
+      "debit": 0,
+      "credit": 6000
+    }
+  ]
+}

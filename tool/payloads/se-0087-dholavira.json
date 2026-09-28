@@ -1,0 +1,10 @@
+{
+  "voucher": {"type":"SE","number":"SE-0087","voucher_no":"SE-0087","date":"2026-07-13","amount":6180,"narration":"Tax invoice SI-00041/2026 — The Dholavira Resort — Domain + Hosting (vs proforma DH-00037)","status":"CONFIRMED","source_doc_type":"Sales Invoice","source_doc_no":"SI-00041/2026"},
+  "lines":[
+    {"ledger_id":98,"debit":6180,"credit":0},
+    {"ledger_id":82,"debit":0,"credit":1491.53},
+    {"ledger_id":83,"debit":0,"credit":3745.75},
+    {"ledger_id":13,"debit":0,"credit":471.36},
+    {"ledger_id":14,"debit":0,"credit":471.36}
+  ]
+}

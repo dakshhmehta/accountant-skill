@@ -1,0 +1,18 @@
+{
+  "voucher": {
+    "type": "BP",
+    "date": "2026-09-16",
+    "amount": 9735.00,
+    "voucher_no": "BP-0058",
+    "narration": "Reversal of BP-0057: Aug 2026 GST payment (GSTR-3B) ₹9,735 — payment NOT yet made (Daksh to confirm date); un-booking until actual payment",
+    "request_id": null,
+    "status": "CONFIRMED",
+    "_review_flag_passed": true
+  },
+  "lines": [
+    { "ledger_id": 2, "debit": 9735.00, "credit": 0 },
+    { "ledger_id": 13, "debit": 0, "credit": 4794.24 },
+    { "ledger_id": 14, "debit": 0, "credit": 4793.24 },
+    { "ledger_id": 55, "debit": 0, "credit": 147.52 }
+  ]
+}

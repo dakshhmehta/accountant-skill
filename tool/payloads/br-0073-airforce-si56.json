@@ -1,0 +1,7 @@
+{
+  "voucher": {"type":"BR","number":"BR-0073","voucher_no":"BR-0073","date":"2026-08-21","amount":18047.30,"narration":"Payment received against SI-00056/2026 — Airforce School Bhuj — credited to DCB Bank (paid 21-Aug-2026)","status":"CONFIRMED"},
+  "lines":[
+    {"ledger_id":2,"debit":18047.30,"credit":0},
+    {"ledger_id":99,"debit":0,"credit":18047.30}
+  ]
+}

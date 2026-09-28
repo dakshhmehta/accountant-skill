@@ -1,0 +1,35 @@
+{
+  "voucher": {
+    "type": "SE",
+    "number": "SE-NK-DH28",
+    "voucher_no": "SE-NK-DH28",
+    "date": "2026-07-25",
+    "amount": 15120.00,
+    "narration": "Tax invoice DH-00028/2026 — NK Firms — Domain ₹960 + Hosting ₹14,160, 18% GST",
+    "status": "CONFIRMED",
+    "source_doc_type": "Sales Invoice",
+    "source_doc_no": "DH-00028/2026"
+  },
+  "lines": [
+    {
+      "ledger_id": 85,
+      "debit": 15120.00,
+      "credit": 0
+    },
+    {
+      "ledger_id": 5,
+      "debit": 0,
+      "credit": 12813.56
+    },
+    {
+      "ledger_id": 13,
+      "debit": 0,
+      "credit": 1153.22
+    },
+    {
+      "ledger_id": 14,
+      "debit": 0,
+      "credit": 1153.22
+    }
+  ]
+}

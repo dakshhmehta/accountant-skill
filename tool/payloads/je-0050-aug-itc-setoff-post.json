@@ -1,0 +1,16 @@
+{
+  "voucher": {
+    "type": "JE",
+    "date": "2026-09-16",
+    "amount": 5915.86,
+    "voucher_no": "JE-0050",
+    "narration": "Aug 2026 ITC setoff (legal order: Input IGST → IGST, then CGST, then SGST) — Output CGST ₹768.92 + Output SGST ₹5,146.94 cleared by Input IGST ₹5,915.86 post BP-0053; Input IGST balance ₹679.34 + Input CGST ₹17.35 + Input SGST ₹17.35 = ₹714.04 carried forward to Sept",
+    "status": "CONFIRMED",
+    "_review_flag_passed": true
+  },
+  "lines": [
+    { "ledger_id": 13, "debit": 768.92, "credit": 0 },
+    { "ledger_id": 14, "debit": 5146.94, "credit": 0 },
+    { "ledger_id": 20, "debit": 0, "credit": 5915.86 }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "voucher": {
+    "type": "JE",
+    "date": "2026-09-16",
+    "amount": 5915.86,
+    "voucher_no": "JE-0051",
+    "narration": "Reversal of JE-0050: Aug 2026 ITC setoff ₹5,915.86 — payment not yet made; re-post with BP when challan is actually paid",
+    "request_id": null,
+    "status": "CONFIRMED",
+    "_review_flag_passed": true
+  },
+  "lines": [
+    { "ledger_id": 20, "debit": 5915.86, "credit": 0 },
+    { "ledger_id": 13, "debit": 0, "credit": 768.92 },
+    { "ledger_id": 14, "debit": 0, "credit": 5146.94 }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "voucher": {
+    "type": "BP",
+    "date": "2026-07-20",
+    "amount": 6465,
+    "voucher_no": "BP-0039",
+    "narration": "June 2026 GST payment — Output CGST ₹3,232.50 + Output SGST ₹3,232.50 = ₹6,465 paid via DCB Bank (Challan dated 20-Jul-2026)",
+    "status": "CONFIRMED",
+    "_review_flag_passed": true
+  },
+  "lines": [
+    { "ledger_id": 13, "debit": 3232.50, "credit": 0 },
+    { "ledger_id": 14, "debit": 3232.50, "credit": 0 },
+    { "ledger_id": 2, "debit": 0, "credit": 6465.00 }
+  ]
+}

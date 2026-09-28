@@ -1,0 +1,20 @@
+{
+  "voucher": {
+    "type": "PE",
+    "date": "2026-08-28",
+    "amount": 728.98,
+    "voucher_no": "PE-0091",
+    "narration": "Office food supplies via Blink Commerce (Blinkit) - GSTIN 24AAFCG9846E1ZH - Inv#B132460T26163044 - 28-08-2026 - paid via DCB Bank (Aug GSTR-2B recon, 16-09-2026)",
+    "source_doc_type": "Purchase Invoice",
+    "source_doc_no": "B132460T26163044",
+    "request_id": "blink-inv-B132460T26163044",
+    "status": "CONFIRMED",
+    "_review_flag_passed": true
+  },
+  "lines": [
+    { "ledger_id": 48, "debit": 694.28, "credit": 0 },
+    { "ledger_id": 17, "debit": 17.35, "credit": 0 },
+    { "ledger_id": 18, "debit": 17.35, "credit": 0 },
+    { "ledger_id": 2, "debit": 0, "credit": 728.98 }
+  ]
+}

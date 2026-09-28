@@ -1,0 +1,13 @@
+{
+  "voucher": {
+    "type": "BR",
+    "date": "2026-08-22",
+    "amount": 7858.00,
+    "narration": "Advance received from Bhujwala, Jehan (Chadva Rakhal) against proforma DH-00045/2026 — settled against SI-00067/2026 — credited to DCB Bank on 22-Aug-2026",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 2, "debit": 7858.00, "credit": 0 },
+    { "ledger_id": 104, "debit": 0, "credit": 7858.00 }
+  ]
+}

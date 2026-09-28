@@ -1,0 +1,19 @@
+{
+  "voucher": {
+    "type": "BR",
+    "number": "BR-0084",
+    "voucher_no": "BR-0084",
+    "date": "2026-09-09",
+    "amount": 166095,
+    "narration": "Payment received from Shrujan Trust against SI-00074/2026 — Rs 1,52,019 credited to DCB Bank and Rs 14,076 TDS deducted at 10% of taxable value; full GST received.",
+    "source_doc_type": "Bank Receipt",
+    "source_doc_no": "SI-00074/2026",
+    "request_id": "BR-SI-00074-2026-20260909",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 2, "debit": 152019, "credit": 0 },
+    { "ledger_id": 43, "debit": 14076, "credit": 0 },
+    { "ledger_id": 87, "debit": 0, "credit": 166095 }
+  ]
+}

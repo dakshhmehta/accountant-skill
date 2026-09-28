@@ -1,0 +1,19 @@
+{
+  "voucher": {
+    "type": "SE",
+    "number": "SE-0103",
+    "voucher_no": "SE-0103",
+    "date": "2026-09-01",
+    "amount": 960.0,
+    "narration": "Tax invoice SI-00073/2026 — GEETA PHARMA — grabandgostore.in domain renewal (₹960) — 18% GST: Output CGST ₹73.22 + Output SGST ₹73.22 (net taxable ₹813.56)",
+    "source_doc_type": "Sales Invoice",
+    "source_doc_no": "SI-00073/2026",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 107, "debit": 960.0, "credit": 0 },
+    { "ledger_id": 82, "debit": 0, "credit": 813.56 },
+    { "ledger_id": 13, "debit": 0, "credit": 73.22 },
+    { "ledger_id": 14, "debit": 0, "credit": 73.22 }
+  ]
+}

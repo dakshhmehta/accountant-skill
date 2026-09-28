@@ -1,0 +1,25 @@
+{
+  "voucher": {
+    "type": "BR",
+    "number": "BR-0060",
+    "voucher_no": "BR-0060",
+    "date": "2026-07-22",
+    "amount": 4999,
+    "narration": "Cash received against SI-00046/2026 — ADM Legacy Infra",
+    "status": "CONFIRMED",
+    "source_doc_type": "Cash Receipt",
+    "source_doc_no": "SI-00046/2026"
+  },
+  "lines": [
+    {
+      "ledger_id": 1,
+      "debit": 4999,
+      "credit": 0
+    },
+    {
+      "ledger_id": 81,
+      "debit": 0,
+      "credit": 4999
+    }
+  ]
+}

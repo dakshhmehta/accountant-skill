@@ -1,0 +1,17 @@
+{
+  "voucher": {
+    "type": "SE",
+    "date": "2026-09-10",
+    "amount": 23275.50,
+    "narration": "Tax invoice — LaKamp Resort, Bhuj (lakampresort.com) — catch-up billing for the never-invoiced period 2020-21 to 2024-25 (5 years). DOMAIN: 3 yrs (2020-21, 2021-22, 2022-23) @ Rs 1,160/yr = Rs 3,480 + 2 yrs (2023-24, 2024-25) @ Rs 1,260/yr = Rs 2,520. HOSTING: 5 yrs @ flat Rs 2,745/yr = Rs 13,725. Net taxable Rs 19,725.00 + 18% GST: Output CGST Rs 1,775.25 + Output SGST Rs 1,775.25 = Total Rs 23,275.50. Excludes 2026-27 (proforma DH-00039/2026 / invoice 498, Rs 4,999) — not included or duplicated.",
+    "status": "CONFIRMED",
+    "source_doc_type": "Sales Invoice"
+  },
+  "lines": [
+    { "ledger_id": 111, "debit": 23275.50, "credit": 0 },
+    { "ledger_id": 82, "debit": 0, "credit": 6000.00 },
+    { "ledger_id": 83, "debit": 0, "credit": 13725.00 },
+    { "ledger_id": 13, "debit": 0, "credit": 1775.25 },
+    { "ledger_id": 14, "debit": 0, "credit": 1775.25 }
+  ]
+}

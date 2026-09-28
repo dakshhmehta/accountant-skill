@@ -1,0 +1,8 @@
+{
+  "voucher": { "type": "PE", "date": "2026-07-27", "amount": 52887.60, "narration": "GSuite Renewal - Business Starter for nulifeivf.com via ResellerClub - Billing: 20821453 / Txn: 303547278", "status": "CONFIRMED" },
+  "lines": [
+    { "ledger_id": 10, "debit": 44820.00, "credit": 0 },
+    { "ledger_id": 20, "debit": 8067.60, "credit": 0 },
+    { "ledger_id": 46, "debit": 0, "credit": 52887.60 }
+  ]
+}

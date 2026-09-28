@@ -1,0 +1,13 @@
+{
+  "voucher": {
+    "type": "BR",
+    "date": "2026-08-31",
+    "amount": 16760.00,
+    "narration": "Payment received from Bhujwala, Jehan (Shergarh Tented Camp) against SI-00068/2026 — shergarh.com hosting renewal — credited to DCB Bank on 31-Aug-2026",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 2, "debit": 16760.00, "credit": 0 },
+    { "ledger_id": 104, "debit": 0, "credit": 16760.00 }
+  ]
+}

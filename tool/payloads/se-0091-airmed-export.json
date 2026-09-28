@@ -1,0 +1,17 @@
+{
+  "voucher": {
+    "type": "SE",
+    "number": "SE-0091",
+    "voucher_no": "SE-0091",
+    "date": "2026-07-16",
+    "amount": 78089,
+    "narration": "Export of services — Airmed Healthcare Company Limited (Dar es Salaam, Tanzania) — zero-rated, no GST. Per SI-00043/2026 + SI-00044/2026, fully paid 04-Aug (CR-0003)",
+    "status": "CONFIRMED",
+    "source_doc_type": "Sales Invoice",
+    "source_doc_no": "SI-00043/2026 + SI-00044/2026"
+  },
+  "lines": [
+    {"ledger_id": 93, "debit": 78089, "credit": 0},
+    {"ledger_id": 101, "debit": 0, "credit": 78089}
+  ]
+}

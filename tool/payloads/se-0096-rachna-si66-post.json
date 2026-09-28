@@ -1,0 +1,18 @@
+{
+  "voucher": {
+    "type": "SE",
+    "date": "2026-08-31",
+    "amount": 3959.00,
+    "narration": "Tax invoice SI-00066/2026 — Rachna Agency — rachnaagency.com domain renewal (₹1,460) + hosting renewal (₹2,499) — 18% GST: Output CGST ₹301.96 + Output SGST ₹301.96 (net taxable ₹3,355.08)",
+    "status": "CONFIRMED",
+    "source_doc_type": "Sales Invoice",
+    "source_doc_no": "SI-00066/2026"
+  },
+  "lines": [
+    { "ledger_id": 103, "debit": 3959.00, "credit": 0 },
+    { "ledger_id": 82, "debit": 0, "credit": 1237.29 },
+    { "ledger_id": 83, "debit": 0, "credit": 2117.79 },
+    { "ledger_id": 13, "debit": 0, "credit": 301.96 },
+    { "ledger_id": 14, "debit": 0, "credit": 301.96 }
+  ]
+}

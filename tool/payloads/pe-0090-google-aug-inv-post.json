@@ -1,0 +1,19 @@
+{
+  "voucher": {
+    "type": "PE",
+    "date": "2026-08-31",
+    "amount": 955.80,
+    "voucher_no": "PE-0090",
+    "narration": "Google Workspace Business Starter (3 users) - romininteractive.com - Period: 1-31 Aug 2026 - Inv#5670744167 - paid via DCB Bank (Aug GSTR-2B recon, 16-09-2026)",
+    "source_doc_type": "Purchase Invoice",
+    "source_doc_no": "5670744167",
+    "request_id": "gw-inv-5670744167-aug",
+    "status": "CONFIRMED",
+    "_review_flag_passed": true
+  },
+  "lines": [
+    { "ledger_id": 51, "debit": 810.00, "credit": 0 },
+    { "ledger_id": 20, "debit": 145.80, "credit": 0 },
+    { "ledger_id": 2, "debit": 0, "credit": 955.80 }
+  ]
+}

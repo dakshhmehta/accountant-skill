@@ -1,0 +1,15 @@
+{
+  "voucher": {
+    "type": "JE",
+    "date": "2026-06-30",
+    "amount": 255.42,
+    "voucher_no": "JE-0029",
+    "narration": "Correction: GST split on PE-0015 (shrujan.org) — book IGST 18% inter-state RC→Gujarat",
+    "status": "CONFIRMED",
+    "_review_flag_passed": true
+  },
+  "lines": [
+    { "ledger_id": 20, "debit": 255.42, "credit": 0 },
+    { "ledger_id": 10, "debit": 0, "credit": 255.42 }
+  ]
+}

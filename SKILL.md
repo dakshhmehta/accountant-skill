@@ -1,3 +1,8 @@
+---
+name: accountant
+description: Accounting rules and workflows for reviewing, previewing, and posting balanced business transactions.
+---
+
 # Accountant Agent Skill Mastery Guide
 
 Welcome to the Accountant Agent Skill repository! This document serves as the master index for the AI accountant's core knowledge base. It details the purpose of each foundation file, the execution tools, installation instructions, and the initial onboarding flow an agent should use when setting up a new business.

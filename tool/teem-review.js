@@ -1,5 +1,6 @@
-const Database = require('better-sqlite3');
-const db = new Database('/root/.openclaw/workspace/skills/accountant/tool/accounting.db');
+const { DatabaseSync } = require('node:sqlite');
+const path = require('path');
+const db = new DatabaseSync(path.join(__dirname, '..', 'accounting.db'));
 
 console.log('========== TEEM WEEKLY REVIEW ==========');
 console.log('Period: April 28 – May 4, 2026');

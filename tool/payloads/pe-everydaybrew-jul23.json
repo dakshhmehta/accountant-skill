@@ -1,0 +1,8 @@
+{
+  "voucher": { "type": "PE", "date": "2026-07-23", "amount": 3964.80, "narration": "Hosting Renewal - Starter Lite for everydaybrew.in (12mo) via ResellerClub - Billing: 20761247 / Txn: 303400044", "status": "CONFIRMED" },
+  "lines": [
+    { "ledger_id": 10, "debit": 3360.00, "credit": 0 },
+    { "ledger_id": 20, "debit": 604.80, "credit": 0 },
+    { "ledger_id": 46, "debit": 0, "credit": 3964.80 }
+  ]
+}

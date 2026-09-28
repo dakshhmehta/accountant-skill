@@ -1,0 +1,18 @@
+{
+  "voucher": {
+    "type": "BR",
+    "number": "BR-0086",
+    "voucher_no": "BR-0086",
+    "date": "2026-09-25",
+    "amount": 960.00,
+    "narration": "Payment received from The Elite Square against SI-00080/2026 — Rs 960 credited to DCB Bank on 25-09-2026.",
+    "status": "CONFIRMED",
+    "source_doc_type": "Bank Receipt",
+    "source_doc_no": "SI-00080/2026",
+    "request_id": "BR-SI-00080-2026-20260925"
+  },
+  "lines": [
+    { "ledger_id": 2, "debit": 960.00, "credit": 0 },
+    { "ledger_id": 115, "debit": 0, "credit": 960.00 }
+  ]
+}

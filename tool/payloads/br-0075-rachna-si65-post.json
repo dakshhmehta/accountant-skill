@@ -1,0 +1,13 @@
+{
+  "voucher": {
+    "type": "BR",
+    "date": "2026-08-29",
+    "amount": 4259.00,
+    "narration": "Payment received from Rachna Agency against SI-00065/2026 — rachnaagency.com domain + hosting renewal — credited to DCB Bank on 29-Aug-2026",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 2, "debit": 4259.00, "credit": 0 },
+    { "ledger_id": 103, "debit": 0, "credit": 4259.00 }
+  ]
+}

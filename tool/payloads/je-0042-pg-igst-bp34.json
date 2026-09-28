@@ -1,0 +1,15 @@
+{
+  "voucher": {
+    "type": "JE",
+    "date": "2026-07-31",
+    "amount": 0.72,
+    "voucher_no": "JE-0042",
+    "narration": "Correction: BP-0034 PG fee ₹4.72 — Input IGST ₹0.72 not captured (base ₹4.00). Dr Input IGST / Cr PG Charges.",
+    "status": "CONFIRMED",
+    "_review_flag_passed": true
+  },
+  "lines": [
+    { "ledger_id": 20, "debit": 0.72, "credit": 0 },
+    { "ledger_id": 16, "debit": 0, "credit": 0.72 }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "voucher": {
+    "type": "SE",
+    "date": "2026-08-31",
+    "amount": 7858.00,
+    "narration": "Tax invoice SI-00067/2026 — Bhujwala, Jehan (Chadva Rakhal) — chadvarakhal.com/.org/.in domains + hosting renewal — 18% GST: Output CGST ₹599.34 + Output SGST ₹599.34 (net taxable ₹6,659.32)",
+    "status": "CONFIRMED",
+    "source_doc_type": "Sales Invoice",
+    "source_doc_no": "SI-00067/2026"
+  },
+  "lines": [
+    { "ledger_id": 104, "debit": 7858.00, "credit": 0 },
+    { "ledger_id": 82, "debit": 0, "credit": 3914.41 },
+    { "ledger_id": 83, "debit": 0, "credit": 2744.91 },
+    { "ledger_id": 13, "debit": 0, "credit": 599.34 },
+    { "ledger_id": 14, "debit": 0, "credit": 599.34 }
+  ]
+}

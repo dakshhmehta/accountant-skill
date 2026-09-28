@@ -1,0 +1,23 @@
+{
+  "voucher": {
+    "type": "JV",
+    "number": "JV-NK-WRITEOFF",
+    "voucher_no": "JV-NK-WRITEOFF",
+    "date": "2026-07-25",
+    "amount": 2320.00,
+    "narration": "Balance write-off against DH-00028/2026 — NK Firms ₹2,320 unpaid, written off as bad debt",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    {
+      "ledger_id": 86,
+      "debit": 2320.00,
+      "credit": 0
+    },
+    {
+      "ledger_id": 85,
+      "debit": 0,
+      "credit": 2320.00
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "voucher": {"type":"SE","number":"SE-0089","voucher_no":"SE-0089","date":"2026-07-17","amount":4631.50,"narration":"Tax invoice SI-00045/2026 — Airforce School Bhuj — Support Income","status":"CONFIRMED","source_doc_type":"Sales Invoice","source_doc_no":"SI-00045/2026"},
+  "lines":[
+    {"ledger_id":99,"debit":4631.50,"credit":0},
+    {"ledger_id":15,"debit":0,"credit":3925},
+    {"ledger_id":13,"debit":0,"credit":353.25},
+    {"ledger_id":14,"debit":0,"credit":353.25}
+  ]
+}

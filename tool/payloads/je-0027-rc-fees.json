@@ -1,0 +1,16 @@
+{
+  "voucher": {
+    "type": "JE",
+    "date": "2026-06-30",
+    "amount": 9.46,
+    "voucher_no": "JE-0027",
+    "narration": "Correction: ResellerClub gateway fee charges (6 items) not booked earlier — Jun 2026",
+    "status": "CONFIRMED",
+    "_review_flag_passed": true
+  },
+  "lines": [
+    { "ledger_id": 16, "debit": 8.02, "credit": 0 },
+    { "ledger_id": 20, "debit": 1.44, "credit": 0 },
+    { "ledger_id": 46, "debit": 0, "credit": 9.46 }
+  ]
+}

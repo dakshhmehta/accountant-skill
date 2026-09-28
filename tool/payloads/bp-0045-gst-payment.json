@@ -1,0 +1,16 @@
+{
+  "voucher": {
+    "type": "BP",
+    "date": "2026-08-21",
+    "amount": 48678,
+    "voucher_no": "BP-0045",
+    "narration": "GST payment to government via DCB Bank — Output CGST ₹24,339 + Output SGST ₹24,339 = ₹48,678 (Aug 2026 output GST payable)",
+    "status": "CONFIRMED",
+    "_review_flag_passed": true
+  },
+  "lines": [
+    { "ledger_id": 13, "debit": 24339, "credit": 0 },
+    { "ledger_id": 14, "debit": 24339, "credit": 0 },
+    { "ledger_id": 2, "debit": 0, "credit": 48678 }
+  ]
+}

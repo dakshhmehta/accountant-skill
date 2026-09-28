@@ -1,0 +1,7 @@
+{
+  "voucher": {"type":"BR","number":"BR-0072","voucher_no":"BR-0072","date":"2026-07-24","amount":4631.50,"narration":"Payment received against SI-00045/2026 — Airforce School Bhuj (paid 24-Jul)","status":"CONFIRMED"},
+  "lines":[
+    {"ledger_id":2,"debit":4631.50,"credit":0},
+    {"ledger_id":99,"debit":0,"credit":4631.50}
+  ]
+}

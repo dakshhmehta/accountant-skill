@@ -1,0 +1,8 @@
+{
+  "voucher": { "type": "PE", "date": "2026-07-04", "amount": 813.02, "narration": "Registration of inrcoins.in (1yr) via ResellerClub - Billing: 20398207 / Txn: 302552126", "status": "CONFIRMED" },
+  "lines": [
+    { "ledger_id": 10, "debit": 689.00, "credit": 0 },
+    { "ledger_id": 20, "debit": 124.02, "credit": 0 },
+    { "ledger_id": 46, "debit": 0, "credit": 813.02 }
+  ]
+}

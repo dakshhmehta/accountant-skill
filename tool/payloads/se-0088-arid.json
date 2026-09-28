@@ -1,0 +1,10 @@
+{
+  "voucher": {"type":"SE","number":"SE-0088","voucher_no":"SE-0088","date":"2026-07-14","amount":4871,"narration":"Tax invoice SI-00042/2026 — ARID Communities & Technologies — Domain + Hosting","status":"CONFIRMED","source_doc_type":"Sales Invoice","source_doc_no":"SI-00042/2026"},
+  "lines":[
+    {"ledger_id":94,"debit":4871,"credit":0},
+    {"ledger_id":82,"debit":0,"credit":813.56},
+    {"ledger_id":83,"debit":0,"credit":3314.40},
+    {"ledger_id":13,"debit":0,"credit":371.52},
+    {"ledger_id":14,"debit":0,"credit":371.52}
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "voucher": { "type": "PE", "date": "2026-07-13", "amount": 1344.02, "narration": "Domain Renewal - sbargon.com (1yr) via ResellerClub - Billing: 20561936 / Txn: 302932083", "status": "CONFIRMED" },
+  "lines": [
+    { "ledger_id": 10, "debit": 1139.00, "credit": 0 },
+    { "ledger_id": 20, "debit": 205.02, "credit": 0 },
+    { "ledger_id": 46, "debit": 0, "credit": 1344.02 }
+  ]
+}

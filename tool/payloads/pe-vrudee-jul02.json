@@ -1,0 +1,14 @@
+{
+  "voucher": {
+    "type": "PE",
+    "date": "2026-07-02",
+    "amount": 1344.02,
+    "narration": "Domain Renewal - vrudee.com (1yr) via ResellerClub - Billing ID: 20354397 / Txn: 302458291",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 10, "debit": 1139.00, "credit": 0 },
+    { "ledger_id": 20, "debit": 205.02, "credit": 0 },
+    { "ledger_id": 46, "debit": 0, "credit": 1344.02 }
+  ]
+}

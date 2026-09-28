@@ -1,0 +1,8 @@
+{
+  "voucher": { "type": "PE", "date": "2026-07-14", "amount": 1261.42, "narration": "Transfer + Renewal - leenabuilders.com (1yr) via ResellerClub - Billing: 20586229 / Txn: 302991800", "status": "CONFIRMED" },
+  "lines": [
+    { "ledger_id": 10, "debit": 1069.00, "credit": 0 },
+    { "ledger_id": 20, "debit": 192.42, "credit": 0 },
+    { "ledger_id": 46, "debit": 0, "credit": 1261.42 }
+  ]
+}

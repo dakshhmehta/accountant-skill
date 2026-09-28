@@ -1,0 +1,18 @@
+{
+  "voucher": {
+    "type": "BP",
+    "date": "2026-07-31",
+    "amount": 955.8,
+    "narration": "Reversal of BP-0040: Google Workspace Business Starter (3 users) - romininteractive.com - Period: 1-31 Jul 2026 - Inv#5639795411 - IRN: 005c12535fc07c2358ab27f3a6ded7405e620ea263c592c9b6ebe26d5699ab5c - Paid by Daksh Mehta personally",
+    "source_doc_type": "Purchase Invoice",
+    "source_doc_no": "5639795411",
+    "request_id": null,
+    "status": "CONFIRMED",
+    "_review_flag_passed": true
+  },
+  "lines": [
+    { "ledger_id": 51, "debit": 0, "credit": 810.0 },
+    { "ledger_id": 20, "debit": 0, "credit": 145.8 },
+    { "ledger_id": 44, "debit": 955.8, "credit": 0 }
+  ]
+}

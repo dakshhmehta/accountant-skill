@@ -1,0 +1,11 @@
+{
+  "voucher": {"type":"SE","number":"SE-0090","voucher_no":"SE-0090","date":"2026-08-03","amount":18047.30,"narration":"Tax invoice SI-00056/2026 — Airforce School Bhuj — Domain + Hosting + Support","status":"CONFIRMED","source_doc_type":"Sales Invoice","source_doc_no":"SI-00056/2026"},
+  "lines":[
+    {"ledger_id":99,"debit":18047.30,"credit":0},
+    {"ledger_id":82,"debit":0,"credit":1609.32},
+    {"ledger_id":83,"debit":0,"credit":9760.00},
+    {"ledger_id":15,"debit":0,"credit":3925.00},
+    {"ledger_id":13,"debit":0,"credit":1376.49},
+    {"ledger_id":14,"debit":0,"credit":1376.49}
+  ]
+}

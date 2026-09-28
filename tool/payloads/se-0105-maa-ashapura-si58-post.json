@@ -1,0 +1,20 @@
+{
+  "voucher": {
+    "type": "SE",
+    "number": "SE-0105",
+    "voucher_no": "SE-0105",
+    "date": "2026-08-10",
+    "amount": 9335.00,
+    "narration": "Tax invoice SI-00058/2026 — Maa Ashapura Projects Pvt. Ltd. — maashapuraprojects.com Google Workspace email ₹4,130 + domain renewal ₹1,460 + hosting renewal ₹3,745 — 18% GST: Output CGST ₹711.99 + Output SGST ₹711.99 (net taxable ₹7,911.02). Unpaid — receivable (ledger 108).",
+    "source_doc_type": "Sales Invoice",
+    "source_doc_no": "SI-00058/2026",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 108, "debit": 9335.00, "credit": 0 },
+    { "ledger_id": 82, "debit": 0, "credit": 1237.29 },
+    { "ledger_id": 83, "debit": 0, "credit": 6673.73 },
+    { "ledger_id": 13, "debit": 0, "credit": 711.99 },
+    { "ledger_id": 14, "debit": 0, "credit": 711.99 }
+  ]
+}

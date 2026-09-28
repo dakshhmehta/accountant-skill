@@ -1,0 +1,16 @@
+{
+  "voucher": {
+    "type": "JE",
+    "date": "2026-08-01",
+    "amount": 172.18,
+    "voucher_no": "JE-0044",
+    "narration": "Being AWS cloud hosting charges (Amazon SES + S3) for July 2026 billing period, paid by Daksh Mehta from personal account — company liable to reimburse. Statement #2754990741.",
+    "source_doc_type": "Statement",
+    "source_doc_no": "2754990741",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 10, "debit": 172.18, "credit": 0 },
+    { "ledger_id": 44, "debit": 0, "credit": 172.18 }
+  ]
+}

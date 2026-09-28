@@ -1,0 +1,23 @@
+{
+  "voucher": {
+    "type": "BR",
+    "number": "BR-0059",
+    "voucher_no": "BR-0059",
+    "date": "2026-07-14",
+    "amount": 84363,
+    "narration": "Payment received — SI-00038/2026 + SI-00039/2026 — Bhojay Sarvodaya Trust",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    {
+      "ledger_id": 2,
+      "debit": 84363,
+      "credit": 0
+    },
+    {
+      "ledger_id": 78,
+      "debit": 0,
+      "credit": 84363
+    }
+  ]
+}

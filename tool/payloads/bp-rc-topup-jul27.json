@@ -1,0 +1,9 @@
+{
+  "voucher": { "type": "BP", "date": "2026-07-27", "amount": 53005.57, "narration": "RC top-up via Razorpay Ref: pay_TIO1EbX8HQyTWP | Txn: 303547275, 303547274", "status": "CONFIRMED" },
+  "lines": [
+    { "ledger_id": 46, "debit": 53000.00, "credit": 0 },
+    { "ledger_id": 16, "debit": 5.57, "credit": 0 },
+    { "ledger_id": 46, "debit": 0, "credit": 5.57 },
+    { "ledger_id": 2, "debit": 0, "credit": 53000.00 }
+  ]
+}

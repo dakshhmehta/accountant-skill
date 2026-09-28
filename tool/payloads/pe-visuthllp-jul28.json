@@ -1,0 +1,8 @@
+{
+  "voucher": { "type": "PE", "date": "2026-07-28", "amount": 1344.02, "narration": "Domain Renewal - visuthllp.com (1yr) via ResellerClub - Billing: 20850560 / Txn: 303625672", "status": "CONFIRMED" },
+  "lines": [
+    { "ledger_id": 10, "debit": 1139.00, "credit": 0 },
+    { "ledger_id": 20, "debit": 205.02, "credit": 0 },
+    { "ledger_id": 46, "debit": 0, "credit": 1344.02 }
+  ]
+}

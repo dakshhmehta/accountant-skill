@@ -1,0 +1,8 @@
+{
+  "voucher": { "type": "PE", "date": "2026-07-30", "amount": 1674.42, "narration": "Domain Renewal - chadvarakhal.org (1yr) via ResellerClub - Billing: 20872163 / Txn: 303699722", "status": "CONFIRMED" },
+  "lines": [
+    { "ledger_id": 10, "debit": 1419.00, "credit": 0 },
+    { "ledger_id": 20, "debit": 255.42, "credit": 0 },
+    { "ledger_id": 46, "debit": 0, "credit": 1674.42 }
+  ]
+}

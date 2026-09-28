@@ -1,0 +1,19 @@
+{
+  "voucher": {
+    "type": "BP",
+    "date": "2026-08-03",
+    "amount": 955.8,
+    "voucher_no": "BP-0043",
+    "narration": "Google Workspace Business Starter (3 users) - romininteractive.com - Period: 1-31 Jul 2026 - Inv#5639795411 - IRN: 005c12535fc07c2358ab27f3a6ded7405e620ea263c592c9b6ebe26d5699ab5c - Paid via Visa 8008 credit card on 03-08-2026",
+    "source_doc_type": "Google Invoice",
+    "source_doc_no": "5639795411",
+    "request_id": "gw-inv-5639795411-cc",
+    "status": "CONFIRMED",
+    "_review_flag_passed": true
+  },
+  "lines": [
+    { "ledger_id": 51, "debit": 810.0, "credit": 0 },
+    { "ledger_id": 20, "debit": 145.8, "credit": 0 },
+    { "ledger_id": 3, "debit": 0, "credit": 955.8 }
+  ]
+}

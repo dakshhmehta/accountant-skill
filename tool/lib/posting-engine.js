@@ -31,7 +31,8 @@ function postVoucher(voucherData, linesData) {
     validators.validateDuplicate(voucherData);
 
     // 2. Transaction Phase
-    const transaction = db.transaction(() => {
+    db.exec('BEGIN');
+    try {
         const voucherNo = voucherData.voucher_no || generateVoucherNo(voucherData.type);
         
         const voucherInsert = stmts.insertVoucher.run({
@@ -65,10 +66,12 @@ function postVoucher(voucherData, linesData) {
             after_json: JSON.stringify({ voucher: voucherData, lines: linesData })
         });
 
+        db.exec('COMMIT');
         return voucherId;
-    });
-
-    return transaction();
+    } catch (e) {
+        db.exec('ROLLBACK');
+        throw e;
+    }
 }
 
 module.exports = {

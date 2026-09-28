@@ -1,0 +1,13 @@
+{
+  "voucher": {
+    "type": "JE",
+    "date": "2026-07-31",
+    "amount": 3918.23,
+    "narration": "RC wallet reconciliation adjustment — July 2026 closing — bridging cumulative book-vs-actual gap",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 46, "debit": 3918.23, "credit": 0 },
+    { "ledger_id": 92, "debit": 0, "credit": 3918.23 }
+  ]
+}

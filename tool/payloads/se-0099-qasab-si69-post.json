@@ -1,0 +1,18 @@
+{
+  "voucher": {
+    "type": "SE",
+    "date": "2026-09-01",
+    "amount": 12559.00,
+    "narration": "Tax invoice SI-00069/2026 — Qasab (Kutch Craftswomen' Producer Co. Ltd.) — domain renewals qasab.org ₹1,899, qasab.in ₹960, kutchcrafts.com ₹1,760, qasabkutchcrafts.com ₹1,760, qasabcrafts.com ₹1,760 + hosting renewal ₹4,420 — 18% GST: Output CGST ₹957.89 + Output SGST ₹957.89 (net taxable ₹10,643.22)",
+    "status": "CONFIRMED",
+    "source_doc_type": "Sales Invoice",
+    "source_doc_no": "SI-00069/2026"
+  },
+  "lines": [
+    { "ledger_id": 105, "debit": 12559.00, "credit": 0 },
+    { "ledger_id": 82, "debit": 0, "credit": 6897.46 },
+    { "ledger_id": 83, "debit": 0, "credit": 3745.76 },
+    { "ledger_id": 13, "debit": 0, "credit": 957.89 },
+    { "ledger_id": 14, "debit": 0, "credit": 957.89 }
+  ]
+}

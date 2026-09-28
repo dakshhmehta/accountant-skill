@@ -1,0 +1,19 @@
+{
+  "voucher": {
+    "type": "BP",
+    "date": "2026-09-16",
+    "amount": 9735.00,
+    "voucher_no": "BP-0057",
+    "narration": "Aug 2026 GST payment (GSTR-3B) — CGST ₹4,794.24 + SGST ₹4,793.24 = ₹9,587.48 tax + late fee ₹100 (CGST 50 + SGST 50) + interest ₹48 = challan ₹9,735.48 rounded to ₹9,735.00 — residual ₹0.48 netted, GST Charges ₹147.52 (fee+interest) per BP-0011 convention, paid via DCB Bank",
+    "source_doc_type": "GST Challan",
+    "request_id": "aug-gst-challan-9735",
+    "status": "CONFIRMED",
+    "_review_flag_passed": true
+  },
+  "lines": [
+    { "ledger_id": 13, "debit": 4794.24, "credit": 0 },
+    { "ledger_id": 14, "debit": 4793.24, "credit": 0 },
+    { "ledger_id": 55, "debit": 147.52, "credit": 0 },
+    { "ledger_id": 2, "debit": 0, "credit": 9735.00 }
+  ]
+}

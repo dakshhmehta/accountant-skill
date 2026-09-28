@@ -1,0 +1,17 @@
+{
+  "voucher": {
+    "type": "BR",
+    "number": "BR-0079",
+    "voucher_no": "BR-0079",
+    "date": "2026-07-28",
+    "amount": 1760.0,
+    "narration": "Payment received from Visuth LLP against SI-00070/2026 — visuthllp.com domain renewal — credited to DCB Bank on 28-Jul-2026",
+    "source_doc_type": "Bank Receipt",
+    "source_doc_no": "SI-00070/2026",
+    "status": "CONFIRMED"
+  },
+  "lines": [
+    { "ledger_id": 2, "debit": 1760.0, "credit": 0 },
+    { "ledger_id": 106, "debit": 0, "credit": 1760.0 }
+  ]
+}
